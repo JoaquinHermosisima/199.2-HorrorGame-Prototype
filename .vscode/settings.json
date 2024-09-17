@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "199.2 Prototype.sln"
+    "dotnet.defaultSolution": "199.2-HorrorGame-Prototype.sln"
 }
