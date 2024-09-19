@@ -8,6 +8,7 @@ public class Notebook : MonoBehaviour
     [SerializeField] List<Transform> pages;
     [SerializeField] GameObject SymbolTestKa;
     [SerializeField] GameObject SymbolTestKi;
+    [SerializeField] GameObject SymbolTestKu;
     int index = -1;
     bool rotate = false;
     [SerializeField] GameObject previous;
@@ -105,6 +106,10 @@ public class Notebook : MonoBehaviour
                 HiraganaSymbols[1].SetActive(true);
             }    
 
+            if (SymbolTestKu.activeSelf == false)
+            {
+                HiraganaSymbols[2].SetActive(true);
+            }    
         }
     }
 }
