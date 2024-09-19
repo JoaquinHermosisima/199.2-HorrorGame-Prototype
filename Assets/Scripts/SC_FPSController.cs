@@ -114,5 +114,5 @@ public class SC_FPSController : MonoBehaviour
             _cursorLocked = false;
             Cursor.visible = true;
         }
-    }    
+    }
 }

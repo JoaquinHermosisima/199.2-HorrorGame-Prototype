@@ -37,9 +37,9 @@ public class InteractScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 symbol.SetActive(false);
+                notebook.SetActive(true);
                 description.SetActive(true);
                 notDiscovered = false;
-                notebook.SetActive(true);
             }
             
         } else
