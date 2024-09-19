@@ -96,7 +96,7 @@ public class SC_FPSController : MonoBehaviour
                 canMove = true;
             }
         }
-
+        
         
     }
 
