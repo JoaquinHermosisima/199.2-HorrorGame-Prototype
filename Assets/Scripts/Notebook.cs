@@ -6,14 +6,22 @@ public class Notebook : MonoBehaviour
 {
     [SerializeField] float pageSpeed = 0.5f;
     [SerializeField] List<Transform> pages;
+    [SerializeField] GameObject SymbolTest = null;
     int index = -1;
     bool rotate = false;
     [SerializeField] GameObject previous;
     [SerializeField] GameObject next;
 
+    [SerializeField] List<GameObject> HiraganaSymbols;
+    
+
     public void Start()
     {
         previous.SetActive(false);
+        for(int i = 0; i < 5;  i++)
+        {
+            HiraganaSymbols[i].SetActive(false);
+        }
     }
 
     public void RotateForward()
@@ -80,5 +88,14 @@ public class Notebook : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    void Update()
+    {
+        if (SymbolTest.activeSelf == false)
+        {
+            HiraganaSymbols[0].SetActive(true);
+        }
+        
     }
 }

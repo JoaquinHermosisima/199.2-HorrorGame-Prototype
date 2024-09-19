@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class SC_FPSController : MonoBehaviour
 {
+    public bool isNotebookActive;
     public float walkingSpeed = 7.5f;
     public float runningSpeed = 11.5f;
     public float jumpSpeed = 8.0f;
@@ -13,6 +14,8 @@ public class SC_FPSController : MonoBehaviour
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
+    public GameObject Notebook;
+    private bool _cursorLocked;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -28,6 +31,9 @@ public class SC_FPSController : MonoBehaviour
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        isNotebookActive = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        _cursorLocked = true;
     }
 
     void Update()
@@ -70,5 +76,43 @@ public class SC_FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
+        // Notebook Interactions
+        if (isNotebookActive == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Hide_ShowMouseCursor();
+                Notebook.SetActive(true);
+                isNotebookActive = true;
+                canMove = false;
+            }
+        } else
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Hide_ShowMouseCursor();
+                Notebook.SetActive(false);
+                isNotebookActive = false;
+                canMove = true;
+            }
+        }
+
+        
     }
+
+    public void Hide_ShowMouseCursor()
+    {
+        if (!_cursorLocked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            _cursorLocked = true;
+            Cursor.visible = false;
+        }
+        else 
+        {
+            Cursor.lockState = CursorLockMode.None;
+            _cursorLocked = false;
+            Cursor.visible = true;
+        }
+    }    
 }
