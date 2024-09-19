@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Char_Interactible : MonoBehaviour
+public class Char_INT : MonoBehaviour
 {
     public GameObject popPanel;
     public GameObject charPanel;
@@ -17,7 +16,8 @@ public class Char_Interactible : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && popPanel.activeSelf) {
+        if (Input.GetKeyDown(KeyCode.E) && popPanel.activeSelf)
+        {
             popPanel.SetActive(false);
             charPanel.SetActive(true);
         }

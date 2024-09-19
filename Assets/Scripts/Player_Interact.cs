@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player_Interact : MonoBehaviour
 {
+    public GameObject charBlock;
+    public GameObject charPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,9 @@ public class Player_Interact : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            float interactRange = 2f;
+            charPanel.SetActive(!charPanel.activeSelf);
+            
+            /*float interactRange = 2f;
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
             foreach (Collider collider in colliderArray)
             {
@@ -23,7 +27,7 @@ public class Player_Interact : MonoBehaviour
                 {
                     charInteractible.Interact();
                 }
-            }
+            }*/
         }
         
     }
