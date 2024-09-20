@@ -9,6 +9,10 @@ public class Notebook : MonoBehaviour
     [SerializeField] GameObject SymbolTestKa;
     [SerializeField] GameObject SymbolTestKi;
     [SerializeField] GameObject SymbolTestKu;
+
+    [SerializeField] GameObject SymbolTestKe;
+
+    [SerializeField] GameObject SymbolTestKo;
     int index = -1;
     bool rotate = false;
     [SerializeField] GameObject previous;
@@ -94,22 +98,29 @@ public class Notebook : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i<5; i++)
+        if (SymbolTestKa.activeSelf == false)
         {
-            if (SymbolTestKa.activeSelf == false)
-            {
-                HiraganaSymbols[0].SetActive(true);
-            }  
-            
-            if (SymbolTestKi.activeSelf == false)
-            {
-                HiraganaSymbols[1].SetActive(true);
-            }    
+            HiraganaSymbols[0].SetActive(true);
+        }  
+        
+        if (SymbolTestKi.activeSelf == false)
+        {
+            HiraganaSymbols[1].SetActive(true);
+        }    
 
-            if (SymbolTestKu.activeSelf == false)
-            {
-                HiraganaSymbols[2].SetActive(true);
-            }    
-        }
+        if (SymbolTestKu.activeSelf == false)
+        {
+            HiraganaSymbols[2].SetActive(true);
+        }    
+
+        if (SymbolTestKe.activeSelf == false)
+        {
+            HiraganaSymbols[3].SetActive(true);
+        }    
+
+        if (SymbolTestKo.activeSelf == false)
+        {
+            HiraganaSymbols[4].SetActive(true);
+        }    
     }
 }
