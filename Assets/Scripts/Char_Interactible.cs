@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,21 +6,19 @@ using UnityEngine.UI;
 
 public class Char_Interactible : MonoBehaviour
 {
-    public GameObject popPanel;
-    public GameObject charPanel;
-    private void OnTriggerEnter(Collider other)
+    public GameObject charCanvas;
+
+    private void Start()
     {
-        if (other.CompareTag("Player_Object"))
-        {
-            popPanel.SetActive(true);
-        }
+        charCanvas.SetActive(false);
+    }
+    public void Interact()
+    {
+        charCanvas.SetActive(true);
     }
 
-    private void Update()
+    public void dontInteract()
     {
-        if (Input.GetKeyDown(KeyCode.E) && popPanel.activeSelf) {
-            popPanel.SetActive(false);
-            charPanel.SetActive(true);
-        }
+        charCanvas.SetActive(false);
     }
 }
