@@ -20,12 +20,14 @@ public class Player_Movement : MonoBehaviour
     private CharacterController characterController;
 
     private bool canMove = true;
+    private bool _cursorLocked;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        _cursorLocked = true;
     }
 
     void Update()
@@ -63,5 +65,21 @@ public class Player_Movement : MonoBehaviour
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
 
+    }
+
+    public void Hide_ShowMouseCursor()
+    {
+        if (!_cursorLocked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            _cursorLocked = true;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            _cursorLocked = false;
+            Cursor.visible = true;
+        }
     }
 }
