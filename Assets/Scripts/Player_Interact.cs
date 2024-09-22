@@ -14,7 +14,7 @@ public class Player_Interact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.X))
         {   
             float interactRange = 2f;
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
