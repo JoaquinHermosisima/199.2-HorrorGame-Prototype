@@ -69,4 +69,5 @@ public class Char_Interactible : MonoBehaviour
             timer.Stop();
         }*/
     }
+
 }
