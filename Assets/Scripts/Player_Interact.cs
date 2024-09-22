@@ -30,7 +30,7 @@ public class Player_Interact : MonoBehaviour
                         charInteractible.Interact();
                         screenActive = true;
                     }
-                    if(toInteract == false)
+                    if (toInteract == false)
                     {
                         charInteractible.dontInteract();
                         screenActive = false;
@@ -38,7 +38,8 @@ public class Player_Interact : MonoBehaviour
                 }
             }
         }
-        
 
     }
+
+    
 }

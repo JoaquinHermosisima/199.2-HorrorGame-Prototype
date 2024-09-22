@@ -15,9 +15,11 @@ public class Char_Interactible : MonoBehaviour
     public string input;
     public string correctChar;
     public string answer;
+    public bool isAnswered;
     private void Start()
     {
         charCanvas.SetActive(false);
+        isAnswered = false;
     }
     public void Interact()
     {
@@ -32,14 +34,10 @@ public class Char_Interactible : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void getInput()
-    {
-        textDisplay.SetText(inputField.text);
-    }
-
     public void evalInput()
     {
         answer = inputField.text;
+        answer = answer.ToUpper();
         if (answer == correctChar)
         {
             textDisplay.SetText("Correct");
@@ -48,26 +46,19 @@ public class Char_Interactible : MonoBehaviour
         {
             textDisplay.SetText("WRONG");
         }
-        /*int count = 0;
-        Timer timer = new Timer(5000);
-        timer.Elapsed += (sender, e) =>
-        {
-            charCanvas.SetActive(false);
-            count++;
-        };
-        answer = inputField.text;
-        if(answer == correctChar)
-        {
-            textDisplay.SetText("Correct");
-        } else
-        {
-            textDisplay.SetText("WRONG");
-        }
-        timer.Start();
-        if (count > 0)
-        {
-            timer.Stop();
-        }*/
+        StartCoroutine(DestroyCanvas());
+    }
+
+    IEnumerator DestroyCanvas() 
+    {
+        isAnswered = true;
+        yield return new WaitForSeconds(1);
+        charCanvas.SetActive(false);
+    }
+
+    public bool getStatus()
+    {
+        return isAnswered;
     }
 
 }
