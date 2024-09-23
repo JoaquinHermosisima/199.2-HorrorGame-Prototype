@@ -24,6 +24,7 @@ public class InteractScript : MonoBehaviour
     void Start()
     {
         description.SetActive(false);
+        prompt.SetActive(false);
     }
 
     void Update()
@@ -34,20 +35,15 @@ public class InteractScript : MonoBehaviour
         if (notDiscovered == true && (distance <= _interactionPointRadius))
         {
             prompt.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.X))
             {
                 symbol.SetActive(false);
                 notebook.SetActive(true);
                 description.SetActive(true);
                 notDiscovered = false;
+                StartCoroutine(DestroyCanvas());
             }
             
-        } else
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                description.SetActive(false);
-            }
         }
 
         
@@ -59,4 +55,9 @@ public class InteractScript : MonoBehaviour
         Gizmos.DrawWireSphere(_interactionPoint.position, _interactionPointRadius);
     }
 
+    IEnumerator DestroyCanvas()
+    {
+        yield return new WaitForSeconds(2);
+        description.SetActive(false);
+    }
 }
