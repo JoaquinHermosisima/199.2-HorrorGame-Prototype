@@ -6,13 +6,13 @@ public class Notebook : MonoBehaviour
 {
     [SerializeField] float pageSpeed = 1.7f;
     [SerializeField] List<Transform> pages;
-    [SerializeField] GameObject SymbolTestKa;
+    /*[SerializeField] GameObject SymbolTestKa;
     [SerializeField] GameObject SymbolTestKi;
     [SerializeField] GameObject SymbolTestKu;
 
     [SerializeField] GameObject SymbolTestKe;
 
-    [SerializeField] GameObject SymbolTestKo;
+    [SerializeField] GameObject SymbolTestKo;*/
     int index = -1;
     bool rotate = false;
     [SerializeField] GameObject previous;
@@ -23,11 +23,22 @@ public class Notebook : MonoBehaviour
 
     public void Start()
     {
-        previous.SetActive(false);
+        InitialState();
         /*for(int i = 0; i < 5;  i++)
         {
             HiraganaSymbols[i].SetActive(false);
         }*/
+
+    }
+
+    public void InitialState()
+    {
+        for (int i = 0; i < pages.Count; i++)
+        {
+            pages[i].transform.rotation=Quaternion.identity;
+        }
+        pages[0].SetAsLastSibling();
+        previous.SetActive(false);
     }
 
     public void RotateForward()
@@ -39,6 +50,7 @@ public class Notebook : MonoBehaviour
         pages[index].SetAsLastSibling();
         StartCoroutine(Rotate(angle, true));
     }
+
 
     public void NextButtonActions()
     {
@@ -52,6 +64,15 @@ public class Notebook : MonoBehaviour
         }
     }
 
+    public void RotateBack()
+    {
+        if (rotate == true) {return; }
+        float angle = 0;
+        pages[index].SetAsLastSibling();
+        PreviousButtonActions();
+        StartCoroutine(Rotate(angle, false));
+    }
+
     public void PreviousButtonActions()
     {
         if (next.activeInHierarchy == false)
@@ -62,15 +83,6 @@ public class Notebook : MonoBehaviour
         {
             previous.SetActive(false);
         }
-    }
-
-    public void RotateBack()
-    {
-        if (rotate == true) {return; }
-        float angle = 0;
-        pages[index].SetAsLastSibling();
-        PreviousButtonActions();
-        StartCoroutine(Rotate(angle, false));
     }
 
     IEnumerator Rotate(float angle, bool forward)
@@ -94,35 +106,5 @@ public class Notebook : MonoBehaviour
             }
             yield return null;
         }
-    }
-
-    void Update()
-    {
-        /*
-        if (SymbolTestKa.activeSelf == false)
-        {
-            HiraganaSymbols[0].SetActive(true);
-        }  
-        
-        if (SymbolTestKi.activeSelf == false)
-        {
-            HiraganaSymbols[1].SetActive(true);
-        }    
-
-        if (SymbolTestKu.activeSelf == false)
-        {
-            HiraganaSymbols[2].SetActive(true);
-        }    
-
-        if (SymbolTestKe.activeSelf == false)
-        {
-            HiraganaSymbols[3].SetActive(true);
-        }    
-
-        if (SymbolTestKo.activeSelf == false)
-        {
-            HiraganaSymbols[4].SetActive(true);
-        }    
-        */
     }
 }
