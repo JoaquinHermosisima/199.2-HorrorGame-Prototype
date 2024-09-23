@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class PlayerInteractUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject containerGameObject;
+    [SerializeField] private Player_Interact playerInteract;
+
+    private void Update()
     {
-        
+        if (playerInteract.getChar_Interactible() != null) {
+            Show();
+        }
+        else
+        {
+            Hide();
+        }
+    }
+    private void Show()
+    {
+        containerGameObject.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Hide()
     {
-        
+        containerGameObject.SetActive(false);
     }
 }
