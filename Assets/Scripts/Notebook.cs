@@ -10,10 +10,24 @@ public class book : MonoBehaviour
     bool rotate = false;
     [SerializeField] GameObject backButton;
     [SerializeField] GameObject forwardButton;
+    [SerializeField] List<GameObject> symbols;
+
+    [SerializeField] GameObject AObject;
+
+    [SerializeField] GameObject IObject;
+
+    [SerializeField] GameObject UObject;
+    [SerializeField] GameObject EObject;
+    [SerializeField] GameObject OObject;
 
     private void Start()
     {
         InitialState();
+        for(int i = 0; i <= 4; i++)
+        {
+            symbols[i].SetActive(false);
+        }
+        
     }
 
     public void InitialState()
@@ -94,6 +108,31 @@ public class book : MonoBehaviour
             yield return null;
 
         }
+    }
+
+    void Update()
+    {
+        if (AObject.activeSelf == false)
+        {
+            symbols[0].SetActive(true);
+        }
+        if (IObject.activeSelf == false)
+        {
+            symbols[1].SetActive(true);
+        }
+        if (UObject.activeSelf == false)
+        {
+            symbols[2].SetActive(true);
+        }
+        if (EObject.activeSelf == false)
+        {
+            symbols[3].SetActive(true);
+        }
+        if (OObject.activeSelf == false)
+        {
+            symbols[4].SetActive(true);
+        }
+
     }
 
 

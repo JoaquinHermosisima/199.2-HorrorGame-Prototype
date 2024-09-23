@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class InteractScript : MonoBehaviour
 {
-    [SerializeField] GameObject prompt;
     public bool notDiscovered = true;
     public GameObject symbol;
-    public GameObject description;
 
     public GameObject player;
 
@@ -23,8 +21,7 @@ public class InteractScript : MonoBehaviour
 
     void Start()
     {
-        description.SetActive(false);
-        prompt.SetActive(false);
+
     }
 
     void Update()
@@ -34,14 +31,12 @@ public class InteractScript : MonoBehaviour
         
         if (notDiscovered == true && (distance <= _interactionPointRadius))
         {
-            prompt.SetActive(true);
             if (Input.GetKeyDown(KeyCode.X))
             {
                 symbol.SetActive(false);
                 notebook.SetActive(true);
-                description.SetActive(true);
                 notDiscovered = false;
-                StartCoroutine(DestroyCanvas());
+                //StartCoroutine(DestroyCanvas());
             }
             
         }
@@ -57,7 +52,6 @@ public class InteractScript : MonoBehaviour
 
     IEnumerator DestroyCanvas()
     {
-        yield return new WaitForSeconds(2);
-        description.SetActive(false);
+        yield return new WaitForSeconds(5);
     }
 }
