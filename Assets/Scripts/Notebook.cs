@@ -2,86 +2,72 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Notebook : MonoBehaviour
+public class book : MonoBehaviour
 {
-    [SerializeField] float pageSpeed = 1.7f;
+    [SerializeField] float pageSpeed = 0.5f;
     [SerializeField] List<Transform> pages;
-    /*[SerializeField] GameObject SymbolTestKa;
-    [SerializeField] GameObject SymbolTestKi;
-    [SerializeField] GameObject SymbolTestKu;
-
-    [SerializeField] GameObject SymbolTestKe;
-
-    [SerializeField] GameObject SymbolTestKo;*/
     int index = -1;
     bool rotate = false;
-    [SerializeField] GameObject previous;
-    [SerializeField] GameObject next;
+    [SerializeField] GameObject backButton;
+    [SerializeField] GameObject forwardButton;
 
-    [SerializeField] List<GameObject> HiraganaSymbols;
-    
-
-    public void Start()
+    private void Start()
     {
         InitialState();
-        /*for(int i = 0; i < 5;  i++)
-        {
-            HiraganaSymbols[i].SetActive(false);
-        }*/
-
     }
 
     public void InitialState()
     {
-        for (int i = 0; i < pages.Count; i++)
+        for (int i=0; i<pages.Count; i++)
         {
             pages[i].transform.rotation=Quaternion.identity;
         }
         pages[0].SetAsLastSibling();
-        previous.SetActive(false);
+        backButton.SetActive(false);
+
     }
 
     public void RotateForward()
     {
-        if (rotate == true) {return; }
+        if (rotate == true) { return; }
         index++;
         float angle = 180;
-        NextButtonActions();
+        ForwardButtonActions();
         pages[index].SetAsLastSibling();
         StartCoroutine(Rotate(angle, true));
+
     }
 
-
-    public void NextButtonActions()
+    public void ForwardButtonActions()
     {
-        if(previous.activeInHierarchy==false)
+        if (backButton.activeInHierarchy == false)
         {
-            previous.SetActive(true);
+            backButton.SetActive(true);
         }
         if (index == pages.Count - 1)
         {
-            next.SetActive(false);
+            forwardButton.SetActive(false);
         }
     }
 
     public void RotateBack()
     {
-        if (rotate == true) {return; }
+        if (rotate == true) { return; }
         float angle = 0;
         pages[index].SetAsLastSibling();
-        PreviousButtonActions();
+        BackButtonActions();
         StartCoroutine(Rotate(angle, false));
     }
 
-    public void PreviousButtonActions()
+    public void BackButtonActions()
     {
-        if (next.activeInHierarchy == false)
+        if (forwardButton.activeInHierarchy == false)
         {
-            next.SetActive(true);
+            forwardButton.SetActive(true);
         }
-        if (index -1 == -1) 
+        if (index - 1 == -1)
         {
-            previous.SetActive(false);
+            backButton.SetActive(false);
         }
     }
 
@@ -91,20 +77,25 @@ public class Notebook : MonoBehaviour
         while (true)
         {
             rotate = true;
-            Quaternion targetRotation=Quaternion.Euler(0, angle, 0);
+            Quaternion targetRotation = Quaternion.Euler(0, angle, 0);
             value += Time.deltaTime * pageSpeed;
             pages[index].rotation = Quaternion.Slerp(pages[index].rotation, targetRotation, value);
-            float angle1=Quaternion.Angle(pages[index].rotation, targetRotation);
-            if(angle1 < 0.1f)
+            float angle1 = Quaternion.Angle(pages[index].rotation, targetRotation);
+            if (angle1 < 0.1f)
             {
-                if(forward == false)
+                if (forward == false)
                 {
                     index--;
                 }
                 rotate = false;
                 break;
+
             }
             yield return null;
+
         }
     }
+
+
+
 }
