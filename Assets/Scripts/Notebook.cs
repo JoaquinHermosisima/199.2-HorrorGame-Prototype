@@ -6,7 +6,8 @@ public class book : MonoBehaviour
 {
     [SerializeField] float pageSpeed = 0.5f;
     [SerializeField] List<Transform> pages;
-    int index = -1;
+    public int index = -1;
+    int activeSymbols = 0;
     bool rotate = false;
     [SerializeField] GameObject backButton;
     [SerializeField] GameObject forwardButton;
@@ -20,13 +21,15 @@ public class book : MonoBehaviour
     [SerializeField] GameObject EObject;
     [SerializeField] GameObject OObject;
 
+    [SerializeField] GameObject KaObject;
+    [SerializeField] GameObject KiObject;
+    [SerializeField] GameObject KuObject;
+    [SerializeField] GameObject KeObject;
+    [SerializeField] GameObject KoObject;
+
     private void Start()
     {
         InitialState();
-        for(int i = 0; i <= 4; i++)
-        {
-            symbols[i].SetActive(false);
-        }
         
     }
 
@@ -36,8 +39,14 @@ public class book : MonoBehaviour
         {
             pages[i].transform.rotation=Quaternion.identity;
         }
+
+        for(int i = 0; i <= 9; i++)
+        {
+            symbols[i].SetActive(false);
+        }
         pages[0].SetAsLastSibling();
         backButton.SetActive(false);
+        activeSymbols = 0;
 
     }
 
@@ -131,6 +140,26 @@ public class book : MonoBehaviour
         if (OObject.activeSelf == false)
         {
             symbols[4].SetActive(true);
+        }
+        if (KaObject.activeSelf == false)
+        {
+            symbols[5].SetActive(true);
+        }
+        if (KiObject.activeSelf == false)
+        {
+            symbols[6].SetActive(true);
+        }
+        if (KuObject.activeSelf == false)
+        {
+            symbols[7].SetActive(true);
+        }
+        if (KeObject.activeSelf == false)
+        {
+            symbols[8].SetActive(true);
+        }
+        if (KoObject.activeSelf == false)
+        {
+            symbols[9].SetActive(true);
         }
 
     }
