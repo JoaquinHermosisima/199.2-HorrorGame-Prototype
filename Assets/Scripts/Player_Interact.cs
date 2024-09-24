@@ -21,6 +21,7 @@ public class Player_Interact : MonoBehaviour
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
             foreach (Collider collider in colliderArray)
             {
+                
                 if(collider.TryGetComponent(out Char_Interactible charInteractible))
                 {
                     toInteract = !toInteract;
@@ -36,7 +37,7 @@ public class Player_Interact : MonoBehaviour
                         screenActive = false;
                     }
                 }
-                
+
             }
         }
 
@@ -49,21 +50,6 @@ public class Player_Interact : MonoBehaviour
         foreach (Collider collider in colliderArray)
         {
             if (collider.TryGetComponent(out Char_Interactible charInteractible))
-            {
-                return charInteractible;
-            }
-
-        }
-        return null;
-    }
-
-    public InteractScript getInteract()
-    {
-        float interactRange = 2f;
-        Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
-        foreach (Collider collider in colliderArray)
-        {
-            if (collider.TryGetComponent(out InteractScript charInteractible))
             {
                 return charInteractible;
             }
