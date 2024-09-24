@@ -13,7 +13,7 @@ public class InteractScript : MonoBehaviour
     [SerializeField] private float _interactionPointRadius = 1.7f;
     [SerializeField] private Transform  _interactionPoint;
     [SerializeField] private LayerMask _interactableMask;
-
+    [SerializeField] public GameObject showPressX;
     [SerializeField] private GameObject notebook;
 
     private readonly Collider[] _colliders = new Collider[3];
@@ -21,16 +21,18 @@ public class InteractScript : MonoBehaviour
 
     void Start()
     {
-
+        showPressX.SetActive(false);
     }
 
     void Update()
     {
         float distance = (_interactionPoint.position - player.transform.position).magnitude;
         _numfound = Physics.OverlapSphereNonAlloc(_interactionPoint.position, _interactionPointRadius, _colliders, _interactableMask);
-        
+
         if (notDiscovered == true && (distance <= _interactionPointRadius))
         {
+            showPressX.SetActive(true);
+            Debug.Log("I can see you");
             if (Input.GetKeyDown(KeyCode.X))
             {
                 symbol.SetActive(false);
