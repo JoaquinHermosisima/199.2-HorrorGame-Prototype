@@ -14,7 +14,7 @@ public class Char_Interactible : MonoBehaviour
     public TMP_InputField inputField;
     public TMP_Text textDisplay;
     public Button submitButton;
-    public string input;
+    //public string input;
     public string correctChar;
     public string answer;
     public bool isAnswered;
@@ -35,7 +35,6 @@ public class Char_Interactible : MonoBehaviour
     }
     public void Interact()
     {
-        triggered = true;
         charCanvas.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         submitButton.onClick.AddListener(evalInput);
@@ -43,7 +42,6 @@ public class Char_Interactible : MonoBehaviour
 
     public void dontInteract()
     {
-        triggered = false;
         charCanvas.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -61,21 +59,29 @@ public class Char_Interactible : MonoBehaviour
             textDisplay.SetText("WRONG");
         }
         StartCoroutine(DestroyCanvas());
-        
+
     }
 
-    IEnumerator DestroyCanvas() 
+    IEnumerator DestroyCanvas()
     {
         yield return new WaitForSeconds(1);
         charCanvas.SetActive(false);
         textDisplay.SetText("what character is this");
         inputField.text = "";
-        isAnswered = true;
+        if(answer == correctChar)
+        {
+            isAnswered = true;
+        }
     }
 
-    public bool getStatus()
+    IEnumerator RespawnBlock()
+    {
+        yield return new WaitForSeconds(1);
+    }
+
+    /*public bool getStatus()
     {
         return isAnswered;
-    }
+    }*/
 
 }
