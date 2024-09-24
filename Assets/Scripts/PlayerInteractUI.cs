@@ -16,6 +16,7 @@ public class PlayerInteractUI : MonoBehaviour
         {
             Hide();
         }
+
     }
     private void Show()
     {

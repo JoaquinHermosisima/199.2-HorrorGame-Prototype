@@ -5,12 +5,13 @@ using UnityEngine;
 public class InteractScript : MonoBehaviour
 {
     public bool notDiscovered = true;
+    public bool collide = false;
     public GameObject symbol;
 
     public GameObject player;
 
 
-    [SerializeField] private float _interactionPointRadius = 1.7f;
+    [SerializeField] private float _interactionPointRadius = 2f;
     [SerializeField] private Transform  _interactionPoint;
     [SerializeField] private LayerMask _interactableMask;
     [SerializeField] public GameObject showPressX;
@@ -32,15 +33,18 @@ public class InteractScript : MonoBehaviour
         if (notDiscovered == true && (distance <= _interactionPointRadius))
         {
             showPressX.SetActive(true);
-            Debug.Log("I can see you");
+            //collide = true;
             if (Input.GetKeyDown(KeyCode.X))
             {
+                //collide = false;
                 symbol.SetActive(false);
                 notebook.SetActive(true);
                 notDiscovered = false;
                 //StartCoroutine(DestroyCanvas());
             }
-            
+        } else
+        {
+            showPressX.SetActive(false);
         }
     }
 
@@ -52,5 +56,10 @@ public class InteractScript : MonoBehaviour
     IEnumerator DestroyCanvas()
     {
         yield return new WaitForSeconds(5);
+    }
+
+    public bool getCollide()
+    {
+        return collide;
     }
 }
