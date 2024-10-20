@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Player_Interact : MonoBehaviour
 {   
+    //This Class Opens the Char_Interactible Canvases
     private bool toInteract = false;
     private bool screenActive = false;
+    [SerializeField] private SC_FPSController fpsController;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,18 +26,22 @@ public class Player_Interact : MonoBehaviour
                 
                 if(collider.TryGetComponent(out Char_Interactible charInteractible))
                 {
-                    toInteract = !toInteract;
+                    if(fpsController.getCharCount() >= charInteractible.getRequiredChar())
+                    {
+                        toInteract = !toInteract;
 
-                    if (toInteract == true)
-                    {
-                        charInteractible.Interact();
-                        screenActive = true;
+                        if (toInteract == true)
+                        {
+                            charInteractible.Interact();
+                            screenActive = true;
+                        }
+                        if (toInteract == false)
+                        {
+                            charInteractible.dontInteract();
+                            screenActive = false;
+                        }
                     }
-                    if (toInteract == false)
-                    {
-                        charInteractible.dontInteract();
-                        screenActive = false;
-                    }
+                    
                 }
 
             }

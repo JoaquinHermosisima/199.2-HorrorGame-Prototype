@@ -9,8 +9,6 @@ public class InteractScript : MonoBehaviour
     public GameObject symbol;
 
     public GameObject player;
-
-
     [SerializeField] private float _interactionPointRadius = 2f;
     [SerializeField] private Transform  _interactionPoint;
     [SerializeField] private LayerMask _interactableMask;
@@ -19,6 +17,7 @@ public class InteractScript : MonoBehaviour
 
     private readonly Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numfound;
+    public SC_FPSController _fpsController;
 
     void Start()
     {
@@ -40,6 +39,8 @@ public class InteractScript : MonoBehaviour
                 symbol.SetActive(false);
                 notebook.SetActive(true);
                 notDiscovered = false;
+                _fpsController.addChar();
+                Debug.Log(_fpsController.getCharCount());
                 //StartCoroutine(DestroyCanvas());
             }
         } else

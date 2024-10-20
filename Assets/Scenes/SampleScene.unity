@@ -9167,6 +9167,7 @@ MonoBehaviour:
   showPressX: {fileID: 1574246538}
   notebook: {fileID: 909655314}
   _numfound: 0
+  _fpsController: {fileID: 1401792222}
 --- !u!4 &441830534
 Transform:
   m_ObjectHideFlags: 0
@@ -9388,6 +9389,7 @@ MonoBehaviour:
   showPressX: {fileID: 657630393}
   notebook: {fileID: 909655314}
   _numfound: 0
+  _fpsController: {fileID: 1401792222}
 --- !u!4 &475510549
 Transform:
   m_ObjectHideFlags: 0
@@ -18689,6 +18691,7 @@ MonoBehaviour:
   showPressX: {fileID: 1688738013}
   notebook: {fileID: 909655314}
   _numfound: 0
+  _fpsController: {fileID: 1401792222}
 --- !u!4 &995063713
 Transform:
   m_ObjectHideFlags: 0
@@ -21670,7 +21673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1155174022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23360,6 +23363,7 @@ MonoBehaviour:
   showPressX: {fileID: 587707759}
   notebook: {fileID: 909655314}
   _numfound: 0
+  _fpsController: {fileID: 1401792222}
 --- !u!1 &1199992511
 GameObject:
   m_ObjectHideFlags: 0
@@ -23710,6 +23714,7 @@ MonoBehaviour:
   answer_1: 
   answer_2: 
   isAnswered: 0
+  requiredChar: 5
 --- !u!65 &1213749778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27996,6 +28001,7 @@ MonoBehaviour:
   showPressX: {fileID: 1688050202}
   notebook: {fileID: 909655314}
   _numfound: 0
+  _fpsController: {fileID: 1401792222}
 --- !u!4 &1384852209
 Transform:
   m_ObjectHideFlags: 0
@@ -28876,6 +28882,7 @@ MonoBehaviour:
   lookXLimit: 90
   Notebook: {fileID: 909655314}
   canMove: 1
+  charCount: 0
 --- !u!143 &1401792223
 CharacterController:
   m_ObjectHideFlags: 0
@@ -28914,6 +28921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8ff0496a596fa4fad684810ebd68f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fpsController: {fileID: 1401792222}
 --- !u!114 &1401792225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28928,6 +28936,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   containerGameObject: {fileID: 1155174021}
   playerInteract: {fileID: 1401792224}
+  fpsController: {fileID: 1401792222}
+  textDisplay: {fileID: 1711135606}
 --- !u!1 &1414577282
 GameObject:
   m_ObjectHideFlags: 0
@@ -29433,6 +29443,7 @@ MonoBehaviour:
   showPressX: {fileID: 1626294515}
   notebook: {fileID: 909655314}
   _numfound: 0
+  _fpsController: {fileID: 1401792222}
 --- !u!4 &1455556748
 Transform:
   m_ObjectHideFlags: 0
@@ -32797,6 +32808,7 @@ MonoBehaviour:
   showPressX: {fileID: 1551715581}
   notebook: {fileID: 909655314}
   _numfound: 0
+  _fpsController: {fileID: 1401792222}
 --- !u!4 &1618909273
 Transform:
   m_ObjectHideFlags: 0
@@ -40258,6 +40270,7 @@ MonoBehaviour:
   showPressX: {fileID: 766594633}
   notebook: {fileID: 909655314}
   _numfound: 0
+  _fpsController: {fileID: 1401792222}
 --- !u!4 &1891246597
 Transform:
   m_ObjectHideFlags: 0
@@ -42082,7 +42095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1994489915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44768,6 +44781,7 @@ MonoBehaviour:
   showPressX: {fileID: 67870112}
   notebook: {fileID: 909655314}
   _numfound: 0
+  _fpsController: {fileID: 1401792222}
 --- !u!4 &2026422275
 Transform:
   m_ObjectHideFlags: 0
@@ -45413,6 +45427,7 @@ MonoBehaviour:
   showPressX: {fileID: 706755696}
   notebook: {fileID: 909655314}
   _numfound: 0
+  _fpsController: {fileID: 1401792222}
 --- !u!4 &2090951280
 Transform:
   m_ObjectHideFlags: 0

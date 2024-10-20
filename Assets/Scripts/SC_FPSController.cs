@@ -23,6 +23,7 @@ public class SC_FPSController : MonoBehaviour
 
     [HideInInspector]
     public bool canMove = true;
+    public int charCount = 0;
 
     void Start()
     {
@@ -115,6 +116,16 @@ public class SC_FPSController : MonoBehaviour
             _cursorLocked = false;
             Cursor.visible = true;
         }
+    }
+
+    public void addChar()
+    {
+        charCount += 1;
+    }
+
+    public int getCharCount()
+    {
+        return charCount;
     }
 
 

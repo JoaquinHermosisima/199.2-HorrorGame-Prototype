@@ -14,9 +14,7 @@ public class book : MonoBehaviour
     [SerializeField] List<GameObject> symbols;
 
     [SerializeField] GameObject AObject;
-
     [SerializeField] GameObject IObject;
-
     [SerializeField] GameObject UObject;
     [SerializeField] GameObject EObject;
     [SerializeField] GameObject OObject;

@@ -9,6 +9,7 @@ using UnityEditor.Animations;
 
 public class Char_Interactible : MonoBehaviour
 {
+    //This class contains the code for the Flashcard Canvas
     public GameObject charCanvas_1;
     public GameObject charCanvas_2;
     public GameObject door;
@@ -24,7 +25,8 @@ public class Char_Interactible : MonoBehaviour
     public string answer_1;
     public string answer_2;
     public bool isAnswered;
-    
+    public int requiredChar;
+
     private void Start()
     {
         charCanvas_1.SetActive(false);
@@ -57,7 +59,6 @@ public class Char_Interactible : MonoBehaviour
         }
         
     }
-
     public void dontInteract()
     {
         charCanvas_1.SetActive(false);
@@ -93,6 +94,11 @@ public class Char_Interactible : MonoBehaviour
             textDisplay_2.SetText("WRONG");
         }
         StartCoroutine(DestroyCanvas1());
+    }
+
+    public int getRequiredChar()
+    {
+        return requiredChar;
     }
 
     IEnumerator DestroyCanvas0()
