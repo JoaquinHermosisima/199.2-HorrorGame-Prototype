@@ -45,7 +45,6 @@ public class Char_Interactible : MonoBehaviour
     {
         System.Random rnd = new System.Random();
         int num = rnd.Next(0, 2);
-        Debug.Log(num);
         if (num == 0)
         {
             charCanvas_1.SetActive(true);
