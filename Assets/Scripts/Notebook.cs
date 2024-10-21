@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class book : MonoBehaviour
 {
@@ -63,6 +64,7 @@ public class book : MonoBehaviour
 
     public void ForwardButtonActions()
     {
+        
         if (backButton.activeInHierarchy == false)
         {
             backButton.SetActive(true);
@@ -160,6 +162,24 @@ public class book : MonoBehaviour
         if (KoObject.activeSelf == false)
         {
             symbols[9].SetActive(true);
+        }
+
+        // When leaving the first page, the symbols are set to false
+        // in order to not "bleed" unto the next page
+        if (index != -1) {
+            symbols[0].SetActive(false);
+            symbols[1].SetActive(false);
+            symbols[2].SetActive(false);
+            symbols[3].SetActive(false);
+            symbols[4].SetActive(false);
+        } 
+        // Similar logic for the second page
+        if (index != 0) {
+            symbols[5].SetActive(false);
+            symbols[6].SetActive(false);
+            symbols[7].SetActive(false);
+            symbols[8].SetActive(false);
+            symbols[9].SetActive(false);
         }
 
     }
