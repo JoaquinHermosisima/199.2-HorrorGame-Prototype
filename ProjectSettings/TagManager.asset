@@ -4,12 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Pickupable
+  - KA
+  - KI
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Camera
   - Water
   - UI
   - Pickable
