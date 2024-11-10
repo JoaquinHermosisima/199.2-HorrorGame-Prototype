@@ -6,6 +6,7 @@ TagManager:
   tags:
   - KA
   - KI
+  - Flashlight
   layers:
   - Default
   - TransparentFX
