@@ -7,12 +7,14 @@ public class Platform_Color : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject platform;
-    public Material red_glow;
+    public Material wood;
     public Material green_glow;
+    public bool isColliding;
     [SerializeField] private string cube;
     void Start()
     {
-        platform.GetComponent<Renderer>().material = red_glow;
+        platform.GetComponent<Renderer>().material = wood;
+        isColliding = false;
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class Platform_Color : MonoBehaviour
         if(collision.gameObject.tag == cube)
         {
             platform.GetComponent<Renderer>().material = green_glow;
+            isColliding = true;
         }
     }
 
@@ -28,7 +31,13 @@ public class Platform_Color : MonoBehaviour
     {
         if (collision.gameObject.tag == cube)
         {
-            platform.GetComponent<Renderer>().material = red_glow;
+            platform.GetComponent<Renderer>().material = wood;
+            isColliding = false;
         }
+    }
+
+    public bool getColliding()
+    {
+        return isColliding;
     }
 }

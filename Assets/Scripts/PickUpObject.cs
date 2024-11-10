@@ -26,7 +26,6 @@ public class PickUpObject : MonoBehaviour
             heldObject.transform.rotation = t.rotation;
             if (pressed)
             {
-                //var rigidBody = heldObject.GetComponent<Rigidbody>();
                 rigidBody.drag = 1f;
                 rigidBody.useGravity = true;
                 rigidBody.constraints = RigidbodyConstraints.None;
