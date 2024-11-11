@@ -49,11 +49,13 @@ public class Char_Interactible : MonoBehaviour
         {
             charCanvas_1.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+            inputField_1.Select();
             submitButton_1.onClick.AddListener(evalInput0);
         }
         else if (num == 1) {
             charCanvas_2.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+            inputField_2.Select();
             submitButton_2.onClick.AddListener(evalInput1);
         }
         

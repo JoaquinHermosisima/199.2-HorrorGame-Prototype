@@ -3,7 +3,13 @@ guid: cd1441a7e2abc95488baa03ab2f3ec96
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - symbol: {instanceID: 0}
+  - player: {instanceID: 0}
+  - _interactionPoint: {instanceID: 0}
+  - showPressX: {instanceID: 0}
+  - notebook: {instanceID: 0}
+  - _fpsController: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
