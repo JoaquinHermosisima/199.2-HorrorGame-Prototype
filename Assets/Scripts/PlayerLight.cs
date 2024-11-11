@@ -7,7 +7,7 @@ public class PlayerLight : MonoBehaviour
     // Start is called before the first frame update
     public GameObject spotLight;
     public GameObject flashlight;
-    private bool obtained;
+    public bool obtained;
     private bool active;
     // Start is called before the first frame update
     void Start()
@@ -23,20 +23,22 @@ public class PlayerLight : MonoBehaviour
             flashlight.SetActive(false);
         }
     }
+    
     // Update is called once per frame
     void Update()
     {
+
         if (obtained == true)
         {
-            if (Input.GetKeyDown(KeyCode.F) && active == false)
+            if (Input.GetKeyDown(KeyCode.F) && spotLight.activeSelf)
+        {
+            spotLight.SetActive(false);
+            //active = false;
+            }
+            else if (Input.GetKeyDown(KeyCode.F))
             {
                 spotLight.SetActive(true);
-                active = true;
-            }
-            if (Input.GetKeyDown(KeyCode.F) && active == true)
-            {
-                spotLight.SetActive(false);
-                active = false;
+                //active = true;
             }
         }
     }

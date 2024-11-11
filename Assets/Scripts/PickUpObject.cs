@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class PickUpObject : MonoBehaviour
 {
-    //This Class is in charge of the Player picking up the Objects
+    //This Class is in charge of the Player picking up the Blocks
     private GameObject heldObject;
     public float radius = 2f;
     public float distance = 2f;
