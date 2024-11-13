@@ -19,7 +19,6 @@ public class PickUpObject : MonoBehaviour
         var pressed = Input.GetKeyDown(KeyCode.X);
         if (heldObject)
         {
-            Debug.Log(pickedUp);
             var rigidBody = heldObject.GetComponent<Rigidbody>();
             var moveTo = t.position + distance * t.forward + height * t.up;
             var difference = moveTo - heldObject.transform.position;
@@ -27,7 +26,7 @@ public class PickUpObject : MonoBehaviour
             heldObject.transform.rotation = t.rotation;
             if (pressed)
             {
-                pickedUp = true;
+                pickedUp = false;
                 rigidBody.drag = 1f;
                 rigidBody.useGravity = true;
                 rigidBody.constraints = RigidbodyConstraints.None;
@@ -38,18 +37,23 @@ public class PickUpObject : MonoBehaviour
         {
             if (pressed)
             {
-                var hits = Physics.SphereCastAll(t.position + t.forward, radius, t.forward, radius);
-                var hitIndex = Array.FindIndex(hits, hit => hit.transform.tag == "Pickupable");
+                // Define a layer mask for the "Pickupable" layer
+                int layerMask = LayerMask.GetMask("Pickable"); // Adjust the layer name as needed
 
-                if (hitIndex != -1)
+                // Perform the sphere cast
+                var hits = Physics.SphereCastAll(t.position + t.forward, radius, t.forward, radius, layerMask);
+
+                // Check if any hits were found
+                if (hits.Length > 0)
                 {
-                    var hitObject = hits[hitIndex].transform.gameObject;
+                    var hitObject = hits[0].transform.gameObject; // Get the first hit object
                     heldObject = hitObject;
+
                     var rigidBody = heldObject.GetComponent<Rigidbody>();
                     rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
                     rigidBody.drag = 25f;
                     rigidBody.useGravity = false;
-                    pickedUp = false;
+                    pickedUp = true;
                 }
             }
         }
