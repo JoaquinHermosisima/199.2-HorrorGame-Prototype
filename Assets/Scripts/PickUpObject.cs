@@ -12,6 +12,7 @@ public class PickUpObject : MonoBehaviour
     public float radius = 2f;
     public float distance = 2f;
     public float height = 1f;
+    public bool pickedUp = false;
 
     private void Update()
     {
@@ -26,6 +27,7 @@ public class PickUpObject : MonoBehaviour
             heldObject.transform.rotation = t.rotation;
             if (pressed)
             {
+                pickedUp = false;
                 rigidBody.drag = 1f;
                 rigidBody.useGravity = true;
                 rigidBody.constraints = RigidbodyConstraints.None;
@@ -52,8 +54,14 @@ public class PickUpObject : MonoBehaviour
                     rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
                     rigidBody.drag = 25f;
                     rigidBody.useGravity = false;
+                    pickedUp = true;
                 }
             }
         }
+    }
+
+    public bool getPickedUpState()
+    {
+        return pickedUp;
     }
 }

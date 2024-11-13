@@ -8,6 +8,7 @@ public class Player_Interact : MonoBehaviour
     private bool toInteract = false;
     private bool screenActive = false;
     [SerializeField] private SC_FPSController fpsController;
+    [SerializeField] private LayerMask pickableLayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,5 +63,25 @@ public class Player_Interact : MonoBehaviour
 
         }
         return null;
+    }
+
+    public GameObject GetPickableObject()
+    {
+        float interactRange = 2f;
+        Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (Collider collider in colliderArray)
+        {
+            // Check if the collider's GameObject is in the pickable layer
+            if (IsInLayerMask(collider.gameObject, pickableLayer))
+            {
+                return collider.gameObject; // Return the GameObject if it's pickable
+            }
+        }
+        return null; // Return null if no pickable objects are found
+    }
+
+    private bool IsInLayerMask(GameObject obj, LayerMask layerMask)
+    {
+        return (layerMask & (1 << obj.layer)) != 0;
     }
 }
