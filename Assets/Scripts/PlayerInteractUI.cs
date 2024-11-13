@@ -14,7 +14,7 @@ public class PlayerInteractUI : MonoBehaviour
     private void Update()
     {
         if (playerInteract.getChar_Interactible() != null) {
-            if (fpsController.getCharCount() < 5) {
+            if (fpsController.getCharCount() < playerInteract.getChar_Interactible().getRequiredChar()) {
                 textDisplay.SetText("You need to Collect all characters in the room");
             } else
             {
