@@ -11,6 +11,7 @@ public class PickUpObject : MonoBehaviour
     public float radius = 2f;
     public float distance = 2f;
     public float height = 1f;
+    public bool pickedUp = false;
 
     private void Update()
     {
@@ -18,6 +19,7 @@ public class PickUpObject : MonoBehaviour
         var pressed = Input.GetKeyDown(KeyCode.X);
         if (heldObject)
         {
+            Debug.Log(pickedUp);
             var rigidBody = heldObject.GetComponent<Rigidbody>();
             var moveTo = t.position + distance * t.forward + height * t.up;
             var difference = moveTo - heldObject.transform.position;
@@ -25,7 +27,7 @@ public class PickUpObject : MonoBehaviour
             heldObject.transform.rotation = t.rotation;
             if (pressed)
             {
-                //var rigidBody = heldObject.GetComponent<Rigidbody>();
+                pickedUp = true;
                 rigidBody.drag = 1f;
                 rigidBody.useGravity = true;
                 rigidBody.constraints = RigidbodyConstraints.None;
@@ -47,18 +49,14 @@ public class PickUpObject : MonoBehaviour
                     rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
                     rigidBody.drag = 25f;
                     rigidBody.useGravity = false;
+                    pickedUp = false;
                 }
             }
         }
     }
 
-    private void FixedUpdate()
+    public bool getPickedUpState()
     {
-        /*var t = transform;
-        var rigidBody = heldObject.GetComponent<Rigidbody>();
-        var moveTo = t.position + distance * t.forward + height * t.up;
-        var difference = moveTo - heldObject.transform.position;
-        rigidBody.AddForce(difference * 500);
-        heldObject.transform.rotation = t.rotation;*/
+        return pickedUp;
     }
 }
