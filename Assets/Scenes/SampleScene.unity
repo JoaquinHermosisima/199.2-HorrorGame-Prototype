@@ -4551,7 +4551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &226880335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23986,7 +23986,7 @@ GameObject:
   - component: {fileID: 1113532309}
   - component: {fileID: 1113532308}
   - component: {fileID: 1113532312}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: LVL1_Painting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31269,7 +31269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1213749777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31282,6 +31282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b6b37a0d7d1ca442a4ab9d725ba463c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fpsController: {fileID: 1401792222}
   charCanvas_1: {fileID: 423057982}
   charCanvas_2: {fileID: 1994489914}
   door: {fileID: 1213749776}

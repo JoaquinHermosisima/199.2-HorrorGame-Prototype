@@ -10,6 +10,7 @@ using UnityEditor.Animations;
 public class Char_Interactible : MonoBehaviour
 {
     //This class contains the code for the Flashcard Canvas
+    public SC_FPSController fpsController;
     public GameObject charCanvas_1;
     public GameObject charCanvas_2;
     public GameObject door;
@@ -105,6 +106,7 @@ public class Char_Interactible : MonoBehaviour
     IEnumerator DestroyCanvas0()
     {
         yield return new WaitForSeconds(1);
+        fpsController.bringMovement();
         charCanvas_1.SetActive(false);
         textDisplay_1.SetText("what character is this");
         inputField_1.text = "";
@@ -117,6 +119,7 @@ public class Char_Interactible : MonoBehaviour
     IEnumerator DestroyCanvas1()
     {
         yield return new WaitForSeconds(1);
+        fpsController.bringMovement();
         charCanvas_2.SetActive(false);
         textDisplay_2.SetText("what character is this");
         inputField_2.text = "";

@@ -36,11 +36,13 @@ public class Player_Interact : MonoBehaviour
                         {
                             charInteractible.Interact();
                             screenActive = true;
+                            fpsController.freezeMovement();
                         }
                         if (toInteract == false)
                         {
                             charInteractible.dontInteract();
                             screenActive = false;
+                            fpsController.bringMovement();
                         }
                     }
                     
