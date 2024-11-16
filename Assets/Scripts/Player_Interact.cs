@@ -9,6 +9,7 @@ public class Player_Interact : MonoBehaviour
     private bool screenActive = false;
     [SerializeField] private SC_FPSController fpsController;
     [SerializeField] private LayerMask pickableLayer;
+    [SerializeField] private LayerMask nonIntLayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +60,21 @@ public class Player_Interact : MonoBehaviour
             if (collider.TryGetComponent(out Char_Interactible charInteractible))
             {
                 return charInteractible;
+            }
+
+        }
+        return null;
+    }
+
+    public NonIntCanvas getNonInt()
+    {
+        float interactRange = 2f;
+        Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (Collider collider in colliderArray)
+        {
+            if (collider.TryGetComponent(out NonIntCanvas nonInt))
+            {
+                return nonInt;
             }
 
         }

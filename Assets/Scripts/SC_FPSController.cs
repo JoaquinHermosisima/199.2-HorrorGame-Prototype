@@ -88,8 +88,9 @@ public class SC_FPSController : MonoBehaviour
                 isNotebookActive = true;
                 canMove = false;
             }
-        //to close the notebook
-        } else
+            //to close the notebook
+        }
+        else
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -110,7 +111,7 @@ public class SC_FPSController : MonoBehaviour
             _cursorLocked = true;
             Cursor.visible = false;
         }
-        else 
+        else
         {
             Cursor.lockState = CursorLockMode.None;
             _cursorLocked = false;
@@ -128,5 +129,13 @@ public class SC_FPSController : MonoBehaviour
         return charCount;
     }
 
+    public void freezeMovement()
+    {
+        canMove = false;
+    }
 
+    public void bringMovement()
+    {
+        canMove = true;
+    }
 }
