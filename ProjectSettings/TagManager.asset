@@ -6,6 +6,15 @@ TagManager:
   tags:
   - Pickupable
   - KA
+  - KO
+  - KI
+  - KU
+  - KE
+  - A
+  - I
+  - U
+  - E
+  - O
   layers:
   - Default
   - TransparentFX
