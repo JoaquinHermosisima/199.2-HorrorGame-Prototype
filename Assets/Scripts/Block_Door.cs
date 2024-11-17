@@ -12,7 +12,7 @@ public class Block_Door : MonoBehaviour
     private bool occupied;
     void Start()
     {
-        door.SetActive(true);
+        //door.SetActive(true);
     }
 
     void Update()
@@ -27,13 +27,13 @@ public class Block_Door : MonoBehaviour
             }
         }
 
-        if (occupied)
+        /*if (occupied)
         { 
             openDoor();
         } else
         {
             closeDoor();
-        }
+        }*/
 
     }
     private void openDoor()
