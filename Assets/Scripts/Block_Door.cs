@@ -6,23 +6,43 @@ using UnityEngine;
 public class Block_Door : MonoBehaviour
 {
     // This class is in charge of opening doors in Block-Based Levels
-    public Block_Platform platform;
+    // Place this on the floor of the door level
+    public Block_Platform[] platforms;
     public GameObject door;
+    private bool occupied;
     void Start()
     {
         door.SetActive(true);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (platform.getColliding() == true)
+        occupied = true;
+        foreach (Block_Platform platform in platforms)
         {
-            door.SetActive(false);
+            if (platform.getColliding() == false)
+            {
+                occupied = false;
+                break;
+            }
         }
-        else
+
+        if (occupied)
+        { 
+            openDoor();
+        } else
         {
-            door.SetActive(true);
+            closeDoor();
         }
+
+    }
+    private void openDoor()
+    {
+        door.SetActive(false);
+    }
+
+    private void closeDoor()
+    {
+        door.SetActive(true);
     }
 }

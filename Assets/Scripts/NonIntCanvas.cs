@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class NonIntCanvas : MonoBehaviour
 {
+    //This Class is for objects that you can view to zoom
     public GameObject canvas;
-    // Start is called before the first frame update
     void Start()
     {
         canvas.SetActive(false);

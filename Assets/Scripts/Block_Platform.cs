@@ -42,4 +42,9 @@ public class Block_Platform : MonoBehaviour
     {
         return isColliding;
     }
+
+    public bool getMaterial()
+    {
+        return platform.GetComponent<Material>();
+    }
 }
