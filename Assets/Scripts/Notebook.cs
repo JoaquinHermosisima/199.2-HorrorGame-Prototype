@@ -25,6 +25,13 @@ public class book : MonoBehaviour
     [SerializeField] GameObject KeObject;
     [SerializeField] GameObject KoObject;
 
+
+    [SerializeField] GameObject TaObject;
+    [SerializeField] GameObject ChiObject;
+    [SerializeField] GameObject TsuObject;
+    [SerializeField] GameObject TeObject;
+    [SerializeField] GameObject ToObject;
+
     private void Start()
     {
         InitialState();
@@ -42,7 +49,12 @@ public class book : MonoBehaviour
         {
             symbols[i].SetActive(false);
         }
-        pages[0].SetAsLastSibling();
+        if(index > -1) {
+            pages[index].SetAsLastSibling();
+        } else {
+            pages[0].SetAsLastSibling();
+        }
+        
         backButton.SetActive(false);
         activeSymbols = 0;
 
@@ -159,6 +171,26 @@ public class book : MonoBehaviour
         {
             symbols[9].SetActive(true);
         }
+        if (TaObject.activeSelf == false)
+        {
+            symbols[10].SetActive(true);
+        }
+        if (ChiObject.activeSelf == false)
+        {
+            symbols[11].SetActive(true);
+        }
+        if (TsuObject.activeSelf == false)
+        {
+            symbols[12].SetActive(true);
+        }
+        if (TeObject.activeSelf == false)
+        {
+            symbols[13].SetActive(true);
+        }
+        if (ToObject.activeSelf == false)
+        {
+            symbols[14].SetActive(true);
+        }
  
         if (index != -1) {
             for (int i = 0; i<5; i++) {
@@ -167,6 +199,12 @@ public class book : MonoBehaviour
         }
         if (index != 0) {
             for (int i = 5; i<10; i++) {
+                symbols[i].SetActive(false);
+            }
+        }
+
+        if (index != 1) {
+            for (int i = 10; i<15; i++) {
                 symbols[i].SetActive(false);
             }
         }
