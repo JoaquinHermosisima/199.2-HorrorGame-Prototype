@@ -39,6 +39,14 @@ public class book : MonoBehaviour
     [SerializeField] GameObject SeObject;
     [SerializeField] GameObject SoObject;
 
+
+    [SerializeField] GameObject NaObject;
+    [SerializeField] GameObject NeObject;
+    [SerializeField] GameObject NiObject;
+    [SerializeField] GameObject NuObject;
+    [SerializeField] GameObject NoObject;
+    [SerializeField] GameObject NObject;
+
     private void Start()
     {
         InitialState();
@@ -218,6 +226,30 @@ public class book : MonoBehaviour
         {
             symbols[19].SetActive(true);
         }
+        if (NaObject.activeSelf == false)
+        {
+            symbols[20].SetActive(true);
+        }
+        if (NeObject.activeSelf == false)
+        {
+            symbols[21].SetActive(true);
+        }
+        if (NiObject.activeSelf == false)
+        {
+            symbols[22].SetActive(true);
+        }
+        if (NuObject.activeSelf == false)
+        {
+            symbols[23].SetActive(true);
+        }
+        if (NoObject.activeSelf == false)
+        {
+            symbols[24].SetActive(true);
+        }
+        if (NObject.activeSelf == false)
+        {
+            symbols[25].SetActive(true);
+        }
  
         if (index != -1) {
             for (int i = 0; i<5; i++) {
@@ -238,6 +270,12 @@ public class book : MonoBehaviour
 
         if (index != 2) {
             for (int i = 10; i<15; i++) {
+                symbols[i].SetActive(false);
+            }
+        }
+
+        if (index != 3) {
+            for (int i = 20; i<26; i++) {
                 symbols[i].SetActive(false);
             }
         }
