@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Flashlight : MonoBehaviour
 {
-    public GameObject flashlight;
+    public GameObject lanternObject;
+    public GameObject lanternLight;
     public bool obtained;
     // Start is called before the first frame update
     void Start()
@@ -16,10 +17,10 @@ public class Flashlight : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Flashlight")
         {
             obtained = true;
-            flashlight.SetActive(false);
+            lanternObject.SetActive(false);
         }
     }
 

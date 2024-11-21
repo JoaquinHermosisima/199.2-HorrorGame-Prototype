@@ -1,45 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerLight : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject spotLight;
-    public GameObject flashlight;
-    public bool obtained;
+    [SerializeField] private Player_Interact playerInteract;
+    public GameObject flashLight;
+    public GameObject lantern;
+    private bool obtained;
     private bool active;
-    // Start is called before the first frame update
+    private int firstLight;
+
     void Start()
     {
-        spotLight.SetActive(false);
+        flashLight.SetActive(false);
         active = false;
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Flashlight")
-        {
-            obtained = true;
-            flashlight.SetActive(false);
-        }
+        obtained = false;
+        firstLight = 0;
     }
     
     // Update is called once per frame
     void Update()
     {
-
-        if (obtained == true)
-        {
-            if (Input.GetKeyDown(KeyCode.F) && spotLight.activeSelf)
-        {
-            spotLight.SetActive(false);
-            //active = false;
-            }
-            else if (Input.GetKeyDown(KeyCode.F))
+        if (playerInteract.GetLantern() != null && Input.GetKeyDown(KeyCode.X)) { 
+            if(obtained == false)
             {
-                spotLight.SetActive(true);
-                //active = true;
+                lantern.SetActive(false);
+                obtained = true;
             }
         }
+        
+        if (obtained) {
+            lightControl();
+        }
+        
+    }
+
+    void lightControl()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (active == false)
+            {
+                active = true;
+            }
+            else
+            {
+                active = false;
+            }
+            flashLight.SetActive(active);
+            if (firstLight == 0) {
+                firstLight = 1;
+            }
+        }
+    }
+
+    public bool getObtained()
+    {
+        return obtained;
+    }
+
+    public int getFirstLight()
+    {
+        return firstLight;
     }
 }
