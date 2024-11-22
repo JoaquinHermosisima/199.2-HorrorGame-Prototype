@@ -85,6 +85,7 @@ public class SC_FPSController : MonoBehaviour
             {
                 Hide_ShowMouseCursor();
                 Notebook.SetActive(true);
+                
                 isNotebookActive = true;
                 canMove = false;
             }
