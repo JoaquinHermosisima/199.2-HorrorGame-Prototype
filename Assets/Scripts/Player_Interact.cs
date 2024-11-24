@@ -97,6 +97,20 @@ public class Player_Interact : MonoBehaviour
         }
         return null; // Return null if no pickable objects are found
     }
+    public GameObject GetLantern()
+    {
+        float interactRange = 2f;
+        Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (Collider collider in colliderArray)
+        {
+            // Check if the collider's GameObject has the specified tag
+            if (collider.CompareTag("Flashlight"))
+            {
+                return collider.gameObject;
+            }
+        }
+        return null; // Return null if no objects with the specified tag are found
+    }
 
     private bool IsInLayerMask(GameObject obj, LayerMask layerMask)
     {
