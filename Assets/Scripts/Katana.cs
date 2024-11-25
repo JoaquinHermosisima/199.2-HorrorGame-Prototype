@@ -6,7 +6,7 @@ public class Katana : MonoBehaviour
 {
     //This class is for the Katana
     private int currentAngle = 0;
-    private readonly int[] angles = { 90, 180, 270, 360 };
+    private readonly int[] angles = { 45, 90, 135, 180, 225, 270, 315, 360 };
 
     public void Rotate()
     {
