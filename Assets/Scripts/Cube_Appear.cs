@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cube_Appear : MonoBehaviour
 {
-    // This class makes the Cube appear when the required
+    // This class makes the Block-Puzzle Cubes appear when the required
     // number of characters in the notebook has been set.
     // This code is placed on the Main floor of the Level
     public GameObject cube;

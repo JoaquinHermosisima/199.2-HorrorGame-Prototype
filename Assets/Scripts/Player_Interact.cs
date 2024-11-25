@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player_Interact : MonoBehaviour
 {   
-    //This Class Opens the Char_Interactible Canvases
+    //This Class allows Player to interact with various objects
     private bool toInteract = false;
     private bool screenActive = false;
     [SerializeField] private SC_FPSController fpsController;
@@ -45,7 +46,10 @@ public class Player_Interact : MonoBehaviour
                             fpsController.bringMovement();
                         }
                     }
-                    
+                }
+                if (collider.TryGetComponent(out KatanaTable table))
+                {
+                    table.rotateKatana();
                 }
 
             }
@@ -67,7 +71,6 @@ public class Player_Interact : MonoBehaviour
         }
         return null;
     }
-
     public NonIntCanvas getNonInt()
     {
         float interactRange = 2f;
