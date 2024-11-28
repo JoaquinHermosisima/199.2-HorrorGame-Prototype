@@ -26,69 +26,60 @@ public class EnemyAI : MonoBehaviour
         currentDest = destinations[randNum];
     }
     void Update()
-{
-    Vector3 direction = (player.position - transform.position).normalized;
-    RaycastHit hit;
-
-    // Check if the AI detects the player
-    if (Physics.Raycast(transform.position + rayCastOffset, direction, out hit, sightDistance))
     {
-        if (hit.collider.gameObject.tag == "Player")
+        Vector3 direction = (player.position - transform.position).normalized;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + rayCastOffset, direction, out hit, sightDistance))
         {
-            walking = false;
-            StopCoroutine("stayIdle");
-            StopCoroutine("chaseRoutine");
-            StartCoroutine("chaseRoutine");
-            chasing = true;
+            if (hit.collider.gameObject.tag == "Player")
+            {
+                walking = false;
+                StopCoroutine("stayIdle");
+                StopCoroutine("chaseRoutine");
+                StartCoroutine("chaseRoutine");
+                chasing = true;
+            }
         }
-    }
-
-    // Chase behavior
-    if (chasing)
-    {
-        dest = player.position;
-        ai.destination = dest;
-        ai.speed = chaseSpeed;
-        aiAnim.ResetTrigger("walk");
-        aiAnim.ResetTrigger("idle");
-        aiAnim.SetTrigger("sprint");
-
-        float distance = Vector3.Distance(player.position, ai.transform.position);
-        if (distance <= catchDistance)
+        if (chasing == true)
         {
-            player.gameObject.SetActive(false);
+            dest = player.position;
+            ai.destination = dest;
+            ai.speed = chaseSpeed;
             aiAnim.ResetTrigger("walk");
             aiAnim.ResetTrigger("idle");
-            aiAnim.ResetTrigger("sprint");
-            aiAnim.SetTrigger("jumpscare");
-            StartCoroutine(deathRoutine());
-            chasing = false;
+            aiAnim.SetTrigger("sprint");
+            float distance = Vector3.Distance(player.position, ai.transform.position);
+            if (distance <= catchDistance)
+            {
+                player.gameObject.SetActive(false);
+                aiAnim.ResetTrigger("walk");
+                aiAnim.ResetTrigger("idle");
+                aiAnim.ResetTrigger("sprint");
+                aiAnim.SetTrigger("jumpscare");
+                StartCoroutine(deathRoutine());
+                chasing = false;
+            }
         }
-    }
-
-    // Walking behavior
-    if (walking && !chasing)
-    {
-        dest = currentDest.position;
-        ai.destination = dest;
-        ai.speed = walkSpeed;
-        aiAnim.ResetTrigger("sprint");
-        aiAnim.ResetTrigger("idle");
-        aiAnim.SetTrigger("walk");
-
-        if (ai.remainingDistance <= ai.stoppingDistance)
+        if (walking == true)
         {
+            dest = currentDest.position;
+            ai.destination = dest;
+            ai.speed = walkSpeed;
             aiAnim.ResetTrigger("sprint");
-            aiAnim.ResetTrigger("walk");
-            aiAnim.SetTrigger("idle");
-            ai.speed = 0;
-            StopCoroutine("stayIdle");
-            StartCoroutine("stayIdle");
-            walking = false;
+            aiAnim.ResetTrigger("idle");
+            aiAnim.SetTrigger("walk");
+            if (ai.remainingDistance <= ai.stoppingDistance)
+            {
+                aiAnim.ResetTrigger("sprint");
+                aiAnim.ResetTrigger("walk");
+                aiAnim.SetTrigger("idle");
+                ai.speed = 0;
+                StopCoroutine("stayIdle");
+                StartCoroutine("stayIdle");
+                walking = false;
+            }
         }
     }
-}
-
     IEnumerator stayIdle()
     {
         idleTime = Random.Range(minIdleTime, maxIdleTime);
