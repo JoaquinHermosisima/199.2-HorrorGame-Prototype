@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -51,7 +52,16 @@ public class Player_Interact : MonoBehaviour
                 {
                     table.rotateKatana();
                 }
+            }
 
+            float teaRange = 1.0f;
+            Collider[] teaColliderArray = Physics.OverlapSphere(transform.position, teaRange);
+            foreach (Collider collider in teaColliderArray)
+            {
+                if (collider.TryGetComponent(out Teacup teacup))
+                {
+                    teacup.pourTea();
+                }
             }
         }
 
@@ -80,6 +90,21 @@ public class Player_Interact : MonoBehaviour
             if (collider.TryGetComponent(out NonIntCanvas nonInt))
             {
                 return nonInt;
+            }
+
+        }
+        return null;
+    }
+
+    public Teacup getTeacup()
+    {
+        float interactRange = 2f;
+        Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (Collider collider in colliderArray)
+        {
+            if (collider.TryGetComponent(out Teacup teacup))
+            {
+                return teacup;
             }
 
         }

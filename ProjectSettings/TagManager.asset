@@ -16,6 +16,7 @@ TagManager:
   - E
   - O
   - Flashlight
+  - Teapot
   layers:
   - Default
   - TransparentFX
