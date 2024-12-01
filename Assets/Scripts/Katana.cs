@@ -9,17 +9,24 @@ public class Katana : MonoBehaviour
     private readonly int[] angles = {0, 70, 130, 155, 180, 240, 310, 335};
     public Material currentMaterial;
     public Material greenGlow;
+    public bool isCorrect;
     [SerializeField] private KatanaTable table;
     [SerializeField] private int correctAngle;
 
+    private void Start()
+    {
+        isCorrect = false;
+    }
     private void Update()
     {
         if(angles[currentAngle] == correctAngle)
         {
             table.GetComponent<Renderer>().material = greenGlow;
+            isCorrect = true;
         } else
         {
             table.GetComponent<Renderer>().material = currentMaterial;
+            isCorrect = false;
         }
     }
     public void Rotate()
@@ -27,5 +34,10 @@ public class Katana : MonoBehaviour
         currentAngle = (currentAngle + 1) % angles.Length;
         int nextAngle = angles[currentAngle];
         transform.rotation = Quaternion.Euler(0, nextAngle, 0);
+    }
+
+    public bool getIsCorrect()
+    {
+        return isCorrect;
     }
 }

@@ -36,4 +36,9 @@ public class TeaTable : MonoBehaviour
             teapot.GetComponent<Renderer>().material = defaultMatl;
         }
     }
+
+    public bool getMatch()
+    {
+        return allMatch;
+    }
 }
