@@ -5,28 +5,24 @@ using UnityEngine.ProBuilder.Shapes;
 
 public class KatanaPuzzle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject roChar;
-    [SerializeField] private Katana[] KatanaTables;
+    [SerializeField] private Katana[] katanas;
+    [SerializeField] private GameObject roChar;
     private bool allMatch;
+    // Start is called before the first frame update
     void Start()
     {
-        roChar.SetActive(false);
+        roChar.SetActive(true);
+        allMatch = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckTables();
-    }
-
-    void CheckTables()
-    {
+        
         allMatch = true;
-        foreach (Katana table in KatanaTables)
+        foreach (Katana katana in katanas)
         {
-            print(table.name + " " + table.getIsCorrect());
-            if (table.getIsCorrect() == false)
+            if (katana.GetIsCorrect() == false)
             {
                 allMatch = false;
                 break;
@@ -35,7 +31,7 @@ public class KatanaPuzzle : MonoBehaviour
 
         if (allMatch)
         {
-            roChar.SetActive(true);
+            roChar.SetActive(false);
         }
     }
 }

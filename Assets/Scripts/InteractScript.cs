@@ -40,7 +40,7 @@ public class InteractScript : MonoBehaviour
                 notebook.SetActive(true);
                 notDiscovered = false;
                 _fpsController.addChar();
-                Debug.Log(_fpsController.getCharCount());
+                //Debug.Log(_fpsController.getCharCount());
                 //StartCoroutine(DestroyCanvas());
             }
         } else

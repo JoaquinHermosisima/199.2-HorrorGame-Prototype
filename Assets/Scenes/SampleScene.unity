@@ -3305,8 +3305,6 @@ GameObject:
   - component: {fileID: 58865581}
   - component: {fileID: 58865580}
   - component: {fileID: 58865579}
-  - component: {fileID: 58865578}
-  - component: {fileID: 58865577}
   m_Layer: 0
   m_Name: Room Option 2 (19)
   m_TagString: Untagged
@@ -3314,44 +3312,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &58865577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58865576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &58865578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58865576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &58865579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4437,8 +4397,6 @@ GameObject:
   - component: {fileID: 77787292}
   - component: {fileID: 77787291}
   - component: {fileID: 77787290}
-  - component: {fileID: 77787289}
-  - component: {fileID: 77787288}
   m_Layer: 0
   m_Name: Room Option 2 (7)
   m_TagString: Untagged
@@ -4446,44 +4404,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &77787288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77787287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &77787289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77787287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &77787290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19398,6 +19318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154b5175d1a47e469dfdea0b1ab4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAngle: 0
   currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
   greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
@@ -20743,8 +20664,6 @@ GameObject:
   - component: {fileID: 405919529}
   - component: {fileID: 405919528}
   - component: {fileID: 405919527}
-  - component: {fileID: 405919526}
-  - component: {fileID: 405919525}
   m_Layer: 0
   m_Name: Room Option 2 (14)
   m_TagString: Untagged
@@ -20752,44 +20671,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &405919525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405919524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &405919526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405919524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &405919527
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30616,6 +30497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154b5175d1a47e469dfdea0b1ab4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAngle: 0
   currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
   greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
@@ -34209,8 +34091,6 @@ GameObject:
   - component: {fileID: 634336548}
   - component: {fileID: 634336547}
   - component: {fileID: 634336546}
-  - component: {fileID: 634336545}
-  - component: {fileID: 634336544}
   m_Layer: 0
   m_Name: Room Option 2 (20)
   m_TagString: Untagged
@@ -34218,44 +34098,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &634336544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634336543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &634336545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634336543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &634336546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39827,6 +39669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154b5175d1a47e469dfdea0b1ab4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAngle: 0
   currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
   greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
@@ -43452,8 +43295,6 @@ GameObject:
   - component: {fileID: 836160627}
   - component: {fileID: 836160626}
   - component: {fileID: 836160625}
-  - component: {fileID: 836160624}
-  - component: {fileID: 836160623}
   m_Layer: 0
   m_Name: Room Option 2 (23)
   m_TagString: Untagged
@@ -43461,44 +43302,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &836160623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 836160622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &836160624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 836160622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &836160625
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43878,8 +43681,6 @@ GameObject:
   - component: {fileID: 847595544}
   - component: {fileID: 847595543}
   - component: {fileID: 847595542}
-  - component: {fileID: 847595541}
-  - component: {fileID: 847595540}
   m_Layer: 0
   m_Name: Room Option 2 (10)
   m_TagString: Untagged
@@ -43887,44 +43688,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &847595540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847595539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &847595541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847595539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &847595542
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49230,6 +48993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154b5175d1a47e469dfdea0b1ab4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAngle: 0
   currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
   greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
@@ -50061,8 +49825,6 @@ GameObject:
   - component: {fileID: 953338793}
   - component: {fileID: 953338792}
   - component: {fileID: 953338791}
-  - component: {fileID: 953338790}
-  - component: {fileID: 953338789}
   m_Layer: 0
   m_Name: Room Option 2 (21)
   m_TagString: Untagged
@@ -50070,44 +49832,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &953338789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953338788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &953338790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953338788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &953338791
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50517,8 +50241,6 @@ GameObject:
   - component: {fileID: 973049080}
   - component: {fileID: 973049079}
   - component: {fileID: 973049078}
-  - component: {fileID: 973049077}
-  - component: {fileID: 973049076}
   m_Layer: 0
   m_Name: Room Option 2 (8)
   m_TagString: Untagged
@@ -50526,44 +50248,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
---- !u!114 &973049076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973049075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &973049077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 973049075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &973049078
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51000,6 +50684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154b5175d1a47e469dfdea0b1ab4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAngle: 0
   currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
   greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
@@ -55068,6 +54753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154b5175d1a47e469dfdea0b1ab4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAngle: 0
   currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
   greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
@@ -62790,10 +62476,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b20b044f8f051145b3d579dcfc4ddd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roChar: {fileID: 2083528746}
-  KatanaTables:
+  katanas:
   - {fileID: 583981929}
   - {fileID: 938736493}
+  roChar: {fileID: 2083528746}
 --- !u!1 &1161852581
 GameObject:
   m_ObjectHideFlags: 0
@@ -65024,8 +64710,6 @@ GameObject:
   - component: {fileID: 1190169461}
   - component: {fileID: 1190169460}
   - component: {fileID: 1190169459}
-  - component: {fileID: 1190169458}
-  - component: {fileID: 1190169457}
   m_Layer: 0
   m_Name: Room Option 2 (6)
   m_TagString: Untagged
@@ -65033,44 +64717,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
---- !u!114 &1190169457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190169456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &1190169458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190169456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &1190169459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70378,8 +70024,6 @@ GameObject:
   - component: {fileID: 1263632874}
   - component: {fileID: 1263632873}
   - component: {fileID: 1263632872}
-  - component: {fileID: 1263632871}
-  - component: {fileID: 1263632870}
   m_Layer: 0
   m_Name: Room Option 2 (16)
   m_TagString: Untagged
@@ -70387,44 +70031,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1263632870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263632869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &1263632871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263632869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &1263632872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74880,8 +74486,6 @@ GameObject:
   - component: {fileID: 1316099357}
   - component: {fileID: 1316099356}
   - component: {fileID: 1316099355}
-  - component: {fileID: 1316099354}
-  - component: {fileID: 1316099353}
   m_Layer: 0
   m_Name: Room Option 2 (17)
   m_TagString: Untagged
@@ -74889,44 +74493,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1316099353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1316099352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &1316099354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1316099352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &1316099355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80237,6 +79803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154b5175d1a47e469dfdea0b1ab4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAngle: 0
   currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
   greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
@@ -82512,6 +82079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154b5175d1a47e469dfdea0b1ab4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAngle: 0
   currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
   greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
@@ -85841,8 +85409,6 @@ GameObject:
   - component: {fileID: 1489358783}
   - component: {fileID: 1489358782}
   - component: {fileID: 1489358781}
-  - component: {fileID: 1489358780}
-  - component: {fileID: 1489358779}
   m_Layer: 0
   m_Name: Room Option 2 (11)
   m_TagString: Untagged
@@ -85850,44 +85416,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1489358779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489358778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &1489358780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489358778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &1489358781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -94834,8 +94362,6 @@ GameObject:
   - component: {fileID: 1613439032}
   - component: {fileID: 1613439031}
   - component: {fileID: 1613439030}
-  - component: {fileID: 1613439029}
-  - component: {fileID: 1613439028}
   m_Layer: 0
   m_Name: Room Option 2 (15)
   m_TagString: Untagged
@@ -94843,44 +94369,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1613439028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613439027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &1613439029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613439027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &1613439030
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -98589,8 +98077,6 @@ GameObject:
   - component: {fileID: 1683913629}
   - component: {fileID: 1683913628}
   - component: {fileID: 1683913627}
-  - component: {fileID: 1683913626}
-  - component: {fileID: 1683913625}
   m_Layer: 0
   m_Name: Room Option 2 (5)
   m_TagString: Untagged
@@ -98598,44 +98084,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1683913625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683913624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &1683913626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683913624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &1683913627
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -99395,8 +98843,6 @@ GameObject:
   - component: {fileID: 1690831126}
   - component: {fileID: 1690831125}
   - component: {fileID: 1690831124}
-  - component: {fileID: 1690831123}
-  - component: {fileID: 1690831122}
   m_Layer: 0
   m_Name: Room Option 2 (9)
   m_TagString: Untagged
@@ -99404,44 +98850,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1690831122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690831121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &1690831123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690831121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &1690831124
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -102009,6 +101417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154b5175d1a47e469dfdea0b1ab4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAngle: 0
   currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
   greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
@@ -110530,6 +109939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0154b5175d1a47e469dfdea0b1ab4a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAngle: 0
   currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
   greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
@@ -112069,8 +111479,6 @@ GameObject:
   - component: {fileID: 1870666647}
   - component: {fileID: 1870666646}
   - component: {fileID: 1870666645}
-  - component: {fileID: 1870666644}
-  - component: {fileID: 1870666643}
   m_Layer: 0
   m_Name: Room Option 2 (24)
   m_TagString: Untagged
@@ -112078,44 +111486,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1870666643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870666642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &1870666644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870666642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &1870666645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -112589,8 +111959,6 @@ GameObject:
   - component: {fileID: 1878537280}
   - component: {fileID: 1878537279}
   - component: {fileID: 1878537278}
-  - component: {fileID: 1878537277}
-  - component: {fileID: 1878537276}
   m_Layer: 0
   m_Name: Room Option 2 (18)
   m_TagString: Untagged
@@ -112598,44 +111966,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1878537276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878537275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &1878537277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878537275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &1878537278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -117646,8 +116976,6 @@ GameObject:
   - component: {fileID: 1958725456}
   - component: {fileID: 1958725455}
   - component: {fileID: 1958725454}
-  - component: {fileID: 1958725453}
-  - component: {fileID: 1958725452}
   m_Layer: 0
   m_Name: Room Option 2 (22)
   m_TagString: Untagged
@@ -117655,44 +116983,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1958725452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958725451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &1958725453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958725451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &1958725454
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -121087,8 +120377,6 @@ GameObject:
   - component: {fileID: 2036307748}
   - component: {fileID: 2036307747}
   - component: {fileID: 2036307746}
-  - component: {fileID: 2036307745}
-  - component: {fileID: 2036307744}
   m_Layer: 0
   m_Name: Room Option 2 (13)
   m_TagString: Untagged
@@ -121096,44 +120384,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2036307744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036307743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &2036307745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036307743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &2036307746
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -125814,8 +125064,6 @@ GameObject:
   - component: {fileID: 2141530090}
   - component: {fileID: 2141530089}
   - component: {fileID: 2141530088}
-  - component: {fileID: 2141530087}
-  - component: {fileID: 2141530086}
   m_Layer: 0
   m_Name: Room Option 2 (12)
   m_TagString: Untagged
@@ -125823,44 +125071,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2141530086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141530085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 1858746105}
-  - {fileID: 49918846}
-  - {fileID: 1379334905}
-  - {fileID: 1292109396}
-  - {fileID: 1756321038}
-  - {fileID: 112748329}
-  - {fileID: 1087222832}
-  - {fileID: 1573050945}
-  - {fileID: 1989030797}
-  door: {fileID: 1868298412}
---- !u!114 &2141530087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141530085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8e46d7c64a22245b48091e083c79ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube: {fileID: 764427319}
-  requiredChar: 1
-  fpsController: {fileID: 1401792222}
 --- !u!65 &2141530088
 BoxCollider:
   m_ObjectHideFlags: 0
