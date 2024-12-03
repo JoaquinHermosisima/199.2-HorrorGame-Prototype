@@ -23,6 +23,7 @@ TagManager:
   - TA
   - TSU
   - TO
+  - FloorTrigger
   layers:
   - Default
   - TransparentFX
