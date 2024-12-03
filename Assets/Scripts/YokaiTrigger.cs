@@ -7,11 +7,11 @@ public class YokaiTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject yokai;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("FloorTrigger")) // Ensure the player has the "Player" tag
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("I am stepping");
+            yokai.SetActive(true);
         }
     }
 }
