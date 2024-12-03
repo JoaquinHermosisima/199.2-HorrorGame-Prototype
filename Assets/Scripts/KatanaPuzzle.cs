@@ -1,24 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.ProBuilder.Shapes;
 
 public class KatanaPuzzle : MonoBehaviour
 {
+    public GameObject RoChar;
+    public GameObject TeaPuzzle;
     [SerializeField] private Katana[] katanas;
-    [SerializeField] private GameObject roChar;
     private bool allMatch;
     // Start is called before the first frame update
     void Start()
     {
-        roChar.SetActive(true);
         allMatch = false;
+        RoChar.SetActive(false);
+        TeaPuzzle.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        checkTables();
+    }
+
+    void checkTables()
+    {
         allMatch = true;
         foreach (Katana katana in katanas)
         {
@@ -31,7 +36,8 @@ public class KatanaPuzzle : MonoBehaviour
 
         if (allMatch)
         {
-            roChar.SetActive(false);
+            RoChar.SetActive(true);
+            TeaPuzzle.SetActive(true);
         }
     }
 }

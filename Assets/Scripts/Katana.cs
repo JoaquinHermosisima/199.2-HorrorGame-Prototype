@@ -12,7 +12,6 @@ public class Katana : MonoBehaviour
     public bool isCorrect = false;
     [SerializeField] private KatanaTable table;
     [SerializeField] public int correctAngle;
-
     private void Start()
     {
 
@@ -23,7 +22,6 @@ public class Katana : MonoBehaviour
         {
             isCorrect = true;
             table.GetComponent<Renderer>().material = greenGlow;
-            Debug.Log(this.name + " " + this.GetIsCorrect());
         } else
         {
             isCorrect = false;
@@ -40,15 +38,5 @@ public class Katana : MonoBehaviour
     public bool GetIsCorrect()
     {
         return isCorrect;
-    }
-
-    public int GetCurrentAngle()
-    {
-        return currentAngle;
-    }
-
-    public int GetCorrectAngle()
-    {
-        return correctAngle;
     }
 }
