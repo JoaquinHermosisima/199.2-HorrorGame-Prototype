@@ -17,6 +17,7 @@ public class EnemyAI : MonoBehaviour
     public Vector3 rayCastOffset;
 
     public AudioSource runningSound;
+    public AudioSource walkingSound;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class EnemyAI : MonoBehaviour
         currentDest = destinations[randNum];
         runningSound = GetComponent<AudioSource>();
         runningSound.enabled = false;
+        walkingSound.enabled = true;
     }
 
     void Update()
@@ -44,6 +46,7 @@ public class EnemyAI : MonoBehaviour
         }
         if (chasing)
         {
+            walkingSound.enabled = false;
             runningSound.enabled = true;
             dest = player.position;
             ai.destination = dest;
@@ -58,6 +61,7 @@ public class EnemyAI : MonoBehaviour
         if (walking)
         {
             runningSound.enabled = false;
+            walkingSound.enabled = true;
             dest = currentDest.position;
             ai.destination = dest;
             ai.speed = walkSpeed;
