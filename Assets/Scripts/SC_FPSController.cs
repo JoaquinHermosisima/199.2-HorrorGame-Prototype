@@ -83,7 +83,7 @@ public class SC_FPSController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
                 Hide_ShowMouseCursor();
                 Notebook.SetActive(true);
                 isNotebookActive = true;
@@ -95,7 +95,7 @@ public class SC_FPSController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                Time.timeScale = 1;
+                //Time.timeScale = 1;
                 Hide_ShowMouseCursor();
                 Notebook.SetActive(false);
                 isNotebookActive = false;

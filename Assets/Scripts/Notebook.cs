@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class book : MonoBehaviour
 {
-    [SerializeField] float pageSpeed = 0.5f;
+    [SerializeField] float pageSpeed = 1.7f;
     [SerializeField] List<Transform> pages;
     public int index = -1;
-    int activeSymbols = 0;
     bool rotate = false;
     [SerializeField] GameObject backButton;
     [SerializeField] GameObject forwardButton;
@@ -31,6 +31,7 @@ public class book : MonoBehaviour
     [SerializeField] GameObject TsuObject;
     [SerializeField] GameObject TeObject;
     [SerializeField] GameObject ToObject;
+    [SerializeField] GameObject RoObject;
 
 
     [SerializeField] GameObject SaObject;
@@ -55,43 +56,53 @@ public class book : MonoBehaviour
 
     public void InitialState()
     {
+        // sets all of the page rotations to 0
         for (int i=0; i<pages.Count; i++)
         {
             pages[i].transform.rotation=Quaternion.identity;
         }
 
-        for(int i = 0; i <= 9; i++)
+        // sets all of the first 10 symbols to false since the player hasn't really taken any symbols yet for them to show up in the notebook
+        for(int i = 0; i <= 24; i++)
         {
             symbols[i].SetActive(false);
         }
+        // this just keeps the notebook on the same page that the player left it on
         if(index > -1) {
             pages[index].SetAsLastSibling();
         } else {
             pages[0].SetAsLastSibling();
         }
         
+        // setting the back button to inactive since there's no page before page 1
         backButton.SetActive(false);
-        activeSymbols = 0;
 
     }
 
     public void RotateForward()
     {
+        // checks if page is rotating, makes sure to not do anything when page is rotating to avoid bugs
         if (rotate == true) { return; }
+        // if the page is currently not rotating, it will increment the index by 1 and by doing this it will go to the next page
         index++;
+        // reorients the current page and flips it by 180 degrees in order to show that the page has flipped
         float angle = 180;
         ForwardButtonActions();
+        Debug.Log("RotateForward called");
+        // we remind the program to stay on this page after closing it
         pages[index].SetAsLastSibling();
+        // actually rotates the page and sends a boolean value
         StartCoroutine(Rotate(angle, true));
-
     }
 
     public void ForwardButtonActions()
     {
+        // this just activates the back button when we are not on page 1
         if (backButton.activeInHierarchy == false)
         {
             backButton.SetActive(true);
         }
+        // if we are on the last page, it will deactivate the forward button
         if (index == pages.Count - 1)
         {
             forwardButton.SetActive(false);
@@ -104,6 +115,7 @@ public class book : MonoBehaviour
         float angle = 0;
         pages[index].SetAsLastSibling();
         BackButtonActions();
+        Debug.Log("RotateForward called");
         StartCoroutine(Rotate(angle, false));
     }
 
@@ -137,7 +149,6 @@ public class book : MonoBehaviour
                 }
                 rotate = false;
                 break;
-
             }
             yield return null;
 
@@ -206,50 +217,55 @@ public class book : MonoBehaviour
         {
             symbols[14].SetActive(true);
         }
-        if (SaObject.activeSelf == false)
+        if (RoObject.activeSelf == false)
         {
             symbols[15].SetActive(true);
         }
-        if (ShiObject.activeSelf == false)
+        if (SaObject.activeSelf == false)
         {
             symbols[16].SetActive(true);
         }
-        if (SuObject.activeSelf == false)
+        if (ShiObject.activeSelf == false)
         {
             symbols[17].SetActive(true);
         }
-        if (SeObject.activeSelf == false)
+        if (SuObject.activeSelf == false)
         {
             symbols[18].SetActive(true);
         }
-        if (SoObject.activeSelf == false)
+        if (SeObject.activeSelf == false)
         {
             symbols[19].SetActive(true);
         }
-        if (NaObject.activeSelf == false)
+        if (SoObject.activeSelf == false)
         {
             symbols[20].SetActive(true);
         }
-        if (NeObject.activeSelf == false)
+        if (NaObject.activeSelf == false)
         {
             symbols[21].SetActive(true);
         }
-        if (NiObject.activeSelf == false)
+        if (NeObject.activeSelf == false)
         {
             symbols[22].SetActive(true);
         }
-        if (NuObject.activeSelf == false)
+        if (NiObject.activeSelf == false)
         {
             symbols[23].SetActive(true);
         }
-        if (NoObject.activeSelf == false)
+        if (NuObject.activeSelf == false)
         {
             symbols[24].SetActive(true);
         }
-        if (NObject.activeSelf == false)
+        if (NoObject.activeSelf == false)
         {
             symbols[25].SetActive(true);
         }
+        if (NObject.activeSelf == false)
+        {
+            symbols[26].SetActive(true);
+        }
+
  
         if (index != -1) {
             for (int i = 0; i<5; i++) {
@@ -263,19 +279,19 @@ public class book : MonoBehaviour
         }
 
         if (index != 1) {
-            for (int i = 15; i<20; i++) {
+            for (int i = 16; i<21; i++) {
                 symbols[i].SetActive(false);
             }
         }
 
         if (index != 2) {
-            for (int i = 10; i<15; i++) {
+            for (int i = 10; i<16; i++) {
                 symbols[i].SetActive(false);
             }
         }
 
         if (index != 3) {
-            for (int i = 20; i<26; i++) {
+            for (int i = 21; i<27; i++) {
                 symbols[i].SetActive(false);
             }
         }
