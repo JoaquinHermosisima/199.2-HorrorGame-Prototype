@@ -16,12 +16,12 @@ public class SoundEffects : MonoBehaviour
 
     void Start()
     {
+        gameSounds = gameObject.AddComponent<AudioSource>();
     }
 
     // Update is called once per frame
     public void NotebookSounds()
     {
-        gameSounds = gameObject.AddComponent<AudioSource>();
         gameSounds.volume = 0.01f;
         gameSounds.clip = notebookOpen;
         gameSounds.Play();

@@ -88,7 +88,6 @@ public class book : MonoBehaviour
         // reorients the current page and flips it by 180 degrees in order to show that the page has flipped
         float angle = 180;
         ForwardButtonActions();
-        Debug.Log("RotateForward called");
         // we remind the program to stay on this page after closing it
         pages[index].SetAsLastSibling();
         // actually rotates the page and sends a boolean value
@@ -115,7 +114,6 @@ public class book : MonoBehaviour
         float angle = 0;
         pages[index].SetAsLastSibling();
         BackButtonActions();
-        Debug.Log("RotateForward called");
         StartCoroutine(Rotate(angle, false));
     }
 
@@ -295,6 +293,7 @@ public class book : MonoBehaviour
                 symbols[i].SetActive(false);
             }
         }
+
     }
 
 

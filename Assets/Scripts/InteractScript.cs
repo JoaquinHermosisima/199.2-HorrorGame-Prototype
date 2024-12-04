@@ -40,13 +40,14 @@ public class InteractScript : MonoBehaviour
                 notebook.SetActive(true);
                 notDiscovered = false;
                 _fpsController.addChar();
-                //Debug.Log(_fpsController.getCharCount());
-                //StartCoroutine(DestroyCanvas());
+                _fpsController.canMove = false;
+                StartCoroutine(closeNotebookTime());
             }
         } else
         {
             showPressX.SetActive(false);
         }
+        
     }
 
     private void OnDrawGizmos()
@@ -57,6 +58,13 @@ public class InteractScript : MonoBehaviour
     IEnumerator DestroyCanvas()
     {
         yield return new WaitForSeconds(5);
+    }
+
+    IEnumerator closeNotebookTime()
+    {
+        yield return new WaitForSeconds(2);
+        notebook.SetActive(false);
+        _fpsController.canMove = true;
     }
 
     public bool getCollide()
