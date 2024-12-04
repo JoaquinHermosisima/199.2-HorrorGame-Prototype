@@ -16,11 +16,15 @@ public class EnemyAI : MonoBehaviour
     int randNum;
     public Vector3 rayCastOffset;
 
+    public AudioSource runningSound;
+
     void Start()
     {
         walking = true;
         randNum = Random.Range(0, destinations.Count);
         currentDest = destinations[randNum];
+        runningSound = GetComponent<AudioSource>();
+        runningSound.enabled = false;
     }
 
     void Update()
@@ -40,6 +44,7 @@ public class EnemyAI : MonoBehaviour
         }
         if (chasing)
         {
+            runningSound.enabled = true;
             dest = player.position;
             ai.destination = dest;
             ai.speed = chaseSpeed;
@@ -52,6 +57,7 @@ public class EnemyAI : MonoBehaviour
         }
         if (walking)
         {
+            runningSound.enabled = false;
             dest = currentDest.position;
             ai.destination = dest;
             ai.speed = walkSpeed;
@@ -65,21 +71,18 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void RespawnPlayer()
+void RespawnPlayer()
+{
+    Rigidbody rb = player.GetComponent<Rigidbody>();
+    if (rb != null)
     {
-        Rigidbody rb = player.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            if (!rb.isKinematic)
-            {
-                rb.velocity = Vector3.zero; // Stop any movement
-                rb.angularVelocity = Vector3.zero; // Reset rotation movement
-            }
-        }
-
-        player.position = respawnPoint.position; // Move player to respawn point
-        Debug.Log("Player has respawned!");
+        rb.velocity = Vector3.zero; // Stop any movement
+        rb.angularVelocity = Vector3.zero; // Reset rotation movement
     }
+
+    player.position = respawnPoint.position; // Move player to respawn point
+    Debug.Log("Player has respawned!");
+}
 
     IEnumerator stayIdle()
     {
@@ -101,10 +104,11 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
+{
+    if (other.CompareTag("Player")) // Ensure your player has the tag "Player"
     {
-        if (other.CompareTag("Player")) // Ensure your player has the tag "Player"
-        {
-            RespawnPlayer();
-        }
+        RespawnPlayer();
     }
+}
+
 }
