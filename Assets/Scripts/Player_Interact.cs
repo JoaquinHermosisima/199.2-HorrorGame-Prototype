@@ -140,6 +140,21 @@ public class Player_Interact : MonoBehaviour
         return null; // Return null if no objects with the specified tag are found
     }
 
+    public Hinnagami GetHinnagami()
+    {
+        float interactRange = 2f;
+        Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (Collider collider in colliderArray)
+        {
+            if (collider.TryGetComponent(out Hinnagami h))
+            {
+                return h;
+            }
+
+        }
+        return null;
+    }
+
     private bool IsInLayerMask(GameObject obj, LayerMask layerMask)
     {
         return (layerMask & (1 << obj.layer)) != 0;

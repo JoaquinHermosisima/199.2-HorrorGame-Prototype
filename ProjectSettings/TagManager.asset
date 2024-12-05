@@ -24,6 +24,7 @@ TagManager:
   - TSU
   - TO
   - FloorTrigger
+  - Hinnagami
   layers:
   - Default
   - TransparentFX
