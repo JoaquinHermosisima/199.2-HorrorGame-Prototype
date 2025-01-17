@@ -9374,7 +9374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f58afcd8f9391d544830621985e12b01, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22535,10 +22535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAngle: 0
-  currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
-  greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
-  table: {fileID: 782824062}
   correctAngle: 70
 --- !u!65 &377842922
 BoxCollider:
@@ -35012,10 +35009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAngle: 0
-  currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
-  greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
-  table: {fileID: 1177841196}
   correctAngle: 310
 --- !u!65 &583981930
 BoxCollider:
@@ -45831,10 +45825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAngle: 0
-  currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
-  greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
-  table: {fileID: 1697491690}
   correctAngle: 240
 --- !u!65 &780838273
 BoxCollider:
@@ -56333,10 +56324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAngle: 0
-  currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
-  greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
-  table: {fileID: 1422875816}
   correctAngle: 155
 --- !u!65 &938736494
 BoxCollider:
@@ -58417,10 +58405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAngle: 0
-  currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
-  greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
-  table: {fileID: 693152263}
   correctAngle: 70
 --- !u!65 &980085838
 BoxCollider:
@@ -62766,10 +62751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAngle: 0
-  currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
-  greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
-  table: {fileID: 1410373301}
   correctAngle: 70
 --- !u!65 &1050639421
 BoxCollider:
@@ -89625,10 +89607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAngle: 0
-  currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
-  greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
-  table: {fileID: 1526235423}
   correctAngle: 0
 --- !u!65 &1376412462
 BoxCollider:
@@ -91363,7 +91342,7 @@ Transform:
   m_GameObject: {fileID: 1401792217}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7002781, z: -0, w: -0.71387017}
-  m_LocalPosition: {x: 542.66, y: 205.562, z: 2.37}
+  m_LocalPosition: {x: 585.17, y: 196.74, z: -7.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -92035,10 +92014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAngle: 0
-  currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
-  greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
-  table: {fileID: 1110207980}
   correctAngle: 335
 --- !u!65 &1408209341
 BoxCollider:
@@ -115535,10 +115511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAngle: 0
-  currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
-  greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
-  table: {fileID: 1743861417}
   correctAngle: 180
 --- !u!65 &1731676109
 BoxCollider:
@@ -125067,10 +125040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAngle: 0
-  currentMaterial: {fileID: 2100000, guid: 2080a9941ea04384cae822bdeecf4afb, type: 2}
-  greenGlow: {fileID: 2100000, guid: 692945a5531139042bc5d16e1adc495d, type: 2}
   isCorrect: 0
-  table: {fileID: 1085318702}
   correctAngle: 155
 --- !u!65 &1848960322
 BoxCollider:
