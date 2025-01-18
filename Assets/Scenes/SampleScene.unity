@@ -66332,7 +66332,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b222b232864ea5647842911c4618a462, type: 3}
+  m_Texture: {fileID: 2800000, guid: db593d693b295a14a82bea3b04957ccc, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -67869,7 +67869,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb166ce7ebce8b94da796b59ebed2d9d, type: 2}
+  - {fileID: 2100000, guid: 65351e7e88875674eb9bb7b984606079, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111835,7 +111835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1640675952
 MonoBehaviour:
   m_ObjectHideFlags: 0
