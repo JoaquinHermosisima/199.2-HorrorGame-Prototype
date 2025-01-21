@@ -52,6 +52,8 @@ public class Player_Interact : MonoBehaviour
                 {
                     table.rotateKatana();
                 }
+
+                
             }
 
             float teaRange = 1.0f;
@@ -61,6 +63,10 @@ public class Player_Interact : MonoBehaviour
                 if (collider.TryGetComponent(out Teacup teacup))
                 {
                     teacup.pourTea();
+                }
+                if (collider.TryGetComponent(out BossCab_Detector detector))
+                {
+                    detector.rotateLock();
                 }
             }
         }
@@ -149,6 +155,21 @@ public class Player_Interact : MonoBehaviour
             if (collider.TryGetComponent(out Hinnagami h))
             {
                 return h;
+            }
+
+        }
+        return null;
+    }
+
+    public BossCab_Detector GetCabDetect()
+    {
+        float interactRange = 1.0f;
+        Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (Collider collider in colliderArray)
+        {
+            if (collider.TryGetComponent(out BossCab_Detector detector))
+            {
+                return detector;
             }
 
         }
