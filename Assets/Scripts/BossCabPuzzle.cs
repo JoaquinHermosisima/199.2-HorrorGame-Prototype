@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossCabPuzzle : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class BossCabPuzzle : MonoBehaviour
         if (allMatch)
         {
             character.SetActive(true);
+
         } else { 
             character.SetActive(false); 
         }
