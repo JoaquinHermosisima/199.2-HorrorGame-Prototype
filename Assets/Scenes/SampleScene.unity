@@ -11046,6 +11046,7 @@ GameObject:
   - component: {fileID: 183310817}
   - component: {fileID: 183310818}
   - component: {fileID: 183310819}
+  - component: {fileID: 183310820}
   m_Layer: 0
   m_Name: Room Option 2 (25)
   m_TagString: Untagged
@@ -11201,6 +11202,30 @@ MonoBehaviour:
   - {fileID: 975913778}
   - {fileID: 1944249848}
   character: {fileID: 2082253935}
+--- !u!114 &183310820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183310812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14413783bd5817743b99b4c16bb26e4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locks:
+  - {fileID: 1407431954}
+  - {fileID: 106670398}
+  - {fileID: 1503515464}
+  - {fileID: 1968085486}
+  - {fileID: 2070270216}
+  - {fileID: 729000853}
+  - {fileID: 398700057}
+  - {fileID: 870820084}
+  - {fileID: 300922003}
+  - {fileID: 622015481}
+  character: {fileID: 203555368}
 --- !u!1 &185008392
 GameObject:
   m_ObjectHideFlags: 0
@@ -131594,7 +131619,6 @@ GameObject:
   - component: {fileID: 1811195186}
   - component: {fileID: 1811195185}
   - component: {fileID: 1811195184}
-  - component: {fileID: 1811195183}
   - component: {fileID: 1811195188}
   m_Layer: 0
   m_Name: O_Lock
@@ -131603,26 +131627,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1811195183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811195182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd3637f471eefb46a1d4ee4531d255b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  materials:
-  - {fileID: 2100000, guid: b4ab9970ca26ee1479878e356dbb7a6f, type: 2}
-  - {fileID: 2100000, guid: 7d60a043045271844a08aa69a630f5b5, type: 2}
-  - {fileID: 2100000, guid: 2aca2632f6bf2fe4bb03647fc83d9b54, type: 2}
-  - {fileID: 2100000, guid: c135d6fbdd5539f40a682d3dfa7bdeeb, type: 2}
-  - {fileID: 2100000, guid: 819d7661ada7370458112f0d55e6d335, type: 2}
-  correctIndex: 4
-  isCorrect: 0
 --- !u!65 &1811195184
 BoxCollider:
   m_ObjectHideFlags: 0
