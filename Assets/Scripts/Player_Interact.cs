@@ -48,10 +48,7 @@ public class Player_Interact : MonoBehaviour
                         }
                     }
                 }
-                if (collider.TryGetComponent(out KatanaTable table))
-                {
-                    table.rotateKatana();
-                }
+                
 
                 
             }
@@ -67,6 +64,14 @@ public class Player_Interact : MonoBehaviour
                 if (collider.TryGetComponent(out BossCab_Detector detector))
                 {
                     detector.rotateLock();
+                }
+                if (collider.TryGetComponent(out KatanaTable table))
+                {
+                    table.rotateKatana();
+                }
+                if (collider.TryGetComponent(out BossKatanaTable KT))
+                {
+                    KT.rotateKatana();
                 }
             }
         }
