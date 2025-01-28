@@ -86,6 +86,12 @@ void RespawnPlayer()
 
     player.position = respawnPoint.position; // Move player to respawn point
     Debug.Log("Player has respawned!");
+
+    if (respawnPoint != null)
+{
+    Debug.Log($"Respawning to position: {respawnPoint.position}");
+    Debug.Log($"Player's new position: {player.position}");
+}
 }
 
     IEnumerator stayIdle()
