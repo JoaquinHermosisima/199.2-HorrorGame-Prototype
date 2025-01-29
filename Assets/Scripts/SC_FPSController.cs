@@ -16,6 +16,8 @@ public class SC_FPSController : MonoBehaviour
     public float lookXLimit = 45.0f;
     public GameObject Notebook;
     public bool _cursorLocked;
+    public AudioSource breathingRegular;
+    public AudioSource breathingSprint;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -46,6 +48,37 @@ public class SC_FPSController : MonoBehaviour
         float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+
+        if (!isRunning)
+        {
+            // Play the first sound if it's not already playing
+            if (!breathingRegular.isPlaying)
+            {
+                breathingRegular.Play();
+                breathingRegular.loop = true; // Set to loop
+            }
+
+            // Stop the second sound if it's playing
+            if (breathingSprint.isPlaying)
+            {
+                breathingSprint.Stop();
+            }
+        }
+        else
+        {
+            // Play the second sound if it's not already playing
+            if (!breathingSprint.isPlaying)
+            {
+                breathingSprint.Play();
+                breathingSprint.loop = true; // Set to loop
+            }
+
+            // Stop the first sound if it's playing
+            if (breathingRegular.isPlaying)
+            {
+                breathingRegular.Stop();
+            }
+        }
 
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
