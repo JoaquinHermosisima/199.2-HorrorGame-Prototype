@@ -10,9 +10,12 @@ public class Cube_Appear : MonoBehaviour
     public GameObject cube;
     [SerializeField] private int requiredChar;
     [SerializeField] private SC_FPSController fpsController;
+    [SerializeField] private AudioSource doorOpenSound;
+    private bool soundPlayed;
     void Start()
     {
         cube.SetActive(false);
+        soundPlayed = false;
     }
 
     // Update is called once per frame
@@ -20,6 +23,11 @@ public class Cube_Appear : MonoBehaviour
     {
         if(fpsController.getCharCount() >= requiredChar)
         {
+            if (!soundPlayed) // Check if the sound hasn't been played
+            {
+                doorOpenSound.Play(); // Play the sound
+                soundPlayed = true; // Set the flag to true to prevent replaying
+            }
             cube.SetActive(true);
         }
     }
