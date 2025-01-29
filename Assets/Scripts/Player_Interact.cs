@@ -153,7 +153,7 @@ public class Player_Interact : MonoBehaviour
 
     public Hinnagami GetHinnagami()
     {
-        float interactRange = 2f;
+        float interactRange = 1.0f;
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
         foreach (Collider collider in colliderArray)
         {

@@ -9,8 +9,8 @@ public class UI_Hinnagami : MonoBehaviour
     [SerializeField] private Player_Interact playerInteract;
     [SerializeField] private GameObject containerGameObject;
     [SerializeField] private TMP_Text stateFalseText;
-    [SerializeField] private TMP_Text stateTrueText;
     private bool pressedState;
+    //private bool hasPlayedAudio = false; // Track if audio has been played
     // Start is called before the first frame update
     void Start()
     {
@@ -36,14 +36,14 @@ public class UI_Hinnagami : MonoBehaviour
             }
             if (pressedState == true)
             {
-                stateTrueText.SetText(playerInteract.GetHinnagami().getHint());
+                playerInteract.GetHinnagami().hintOpen();
                 stateFalseText.SetText("");
             }
             else
             {
-                playerInteract.GetHinnagami().getVoice().Play();
-                stateFalseText.SetText("Press X to View");
-                stateTrueText.SetText("");
+                //playerInteract.GetHinnagami().getVoice().Play();
+                playerInteract.GetHinnagami().hintClose();
+                stateFalseText.SetText("Press X");
             }
             Show();
         }
