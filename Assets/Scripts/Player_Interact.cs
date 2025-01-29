@@ -97,6 +97,36 @@ public class Player_Interact : MonoBehaviour
         }
         return null;
     }
+
+    public KatanaTable GetKatanaTable() {
+        float interactRange = 1.0f;
+        Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (Collider collider in colliderArray)
+        {
+            if (collider.TryGetComponent(out KatanaTable table))
+            {
+                return table;
+            }
+
+        }
+        return null;
+    }
+
+    public BossKatanaTable GetBossKatana()
+    {
+        float interactRange = 1.0f;
+        Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (Collider collider in colliderArray)
+        {
+            if (collider.TryGetComponent(out BossKatanaTable table))
+            {
+                return table;
+            }
+
+        }
+        return null;
+    }
+
     public NonIntCanvas getNonInt()
     {
         float interactRange = 2f;
@@ -114,7 +144,7 @@ public class Player_Interact : MonoBehaviour
 
     public Teacup getTeacup()
     {
-        float interactRange = 2f;
+        float interactRange = 1.0f;
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
         foreach (Collider collider in colliderArray)
         {
