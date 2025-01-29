@@ -12,6 +12,8 @@ public class Player_Interact : MonoBehaviour
     [SerializeField] private SC_FPSController fpsController;
     [SerializeField] private LayerMask pickableLayer;
     [SerializeField] private LayerMask nonIntLayer;
+    [SerializeField] private AudioSource teaSound;
+    [SerializeField] private AudioSource katanaSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +61,7 @@ public class Player_Interact : MonoBehaviour
             {
                 if (collider.TryGetComponent(out Teacup teacup))
                 {
+                    teaSound.Play();
                     teacup.pourTea();
                 }
                 if (collider.TryGetComponent(out BossCab_Detector detector))
@@ -67,10 +70,12 @@ public class Player_Interact : MonoBehaviour
                 }
                 if (collider.TryGetComponent(out KatanaTable table))
                 {
+                    katanaSound.Play();
                     table.rotateKatana();
                 }
                 if (collider.TryGetComponent(out BossKatanaTable KT))
                 {
+                    katanaSound.Play();
                     KT.rotateKatana();
                 }
             }

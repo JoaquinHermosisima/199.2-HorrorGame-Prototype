@@ -37,12 +37,14 @@ public class UI_Hinnagami : MonoBehaviour
             if (pressedState == true)
             {
                 playerInteract.GetHinnagami().hintOpen();
+                playerInteract.GetHinnagami().getVoice().Play();
+                fpsController.freezeMovement();
                 stateFalseText.SetText("");
             }
             else
             {
-                //playerInteract.GetHinnagami().getVoice().Play();
                 playerInteract.GetHinnagami().hintClose();
+                fpsController.bringMovement();
                 stateFalseText.SetText("Press X");
             }
             Show();
