@@ -19,6 +19,12 @@ public class EnemyAI : MonoBehaviour
     public AudioSource runningSound;
     public AudioSource walkingSound;
 
+
+    public GameObject jumpscareUI; // Assign a jumpscare UI (like an image) in the Inspector
+    public AudioSource jumpscareSound; // Assign a jumpscare sound in the Inspector
+    public float jumpscareDuration = 1.5f; // Duration of the jumpscare
+
+
     void Start()
     {
         walking = true;
@@ -77,22 +83,28 @@ public class EnemyAI : MonoBehaviour
 
 void RespawnPlayer()
 {
+    if (respawnPoint == null)
+    {
+        Debug.LogError("Respawn Point is not assigned!");
+        return;
+    }
+
     Rigidbody rb = player.GetComponent<Rigidbody>();
     if (rb != null)
     {
-        rb.velocity = Vector3.zero; // Stop any movement
-        rb.angularVelocity = Vector3.zero; // Reset rotation movement
+        rb.velocity = Vector3.zero; // Stop movement
+        rb.angularVelocity = Vector3.zero; // Stop rotational movement
+        rb.MovePosition(respawnPoint.position); // Move the player correctly with physics
+    }
+    else
+    {
+        player.position = respawnPoint.position; // Directly set the position
     }
 
-    player.position = respawnPoint.position; // Move player to respawn point
-    Debug.Log("Player has respawned!");
+    Debug.Log($"Player has respawned at: {respawnPoint.position}");
+    Physics.SyncTransforms(); // Ensure physics matches Transform
+}
 
-    if (respawnPoint != null)
-{
-    Debug.Log($"Respawning to position: {respawnPoint.position}");
-    Debug.Log($"Player's new position: {player.position}");
-}
-}
 
     IEnumerator stayIdle()
     {
@@ -119,6 +131,33 @@ void RespawnPlayer()
     {
         RespawnPlayer();
     }
+}
+
+    IEnumerator JumpscareRoutine()
+{
+    // Activate the jumpscare visuals
+    if (jumpscareUI != null)
+    {
+        jumpscareUI.SetActive(true);
+    }
+
+    // Play the jumpscare sound
+    if (jumpscareSound != null)
+    {
+        jumpscareSound.Play();
+    }
+
+    // Wait for the jumpscare duration
+    yield return new WaitForSeconds(jumpscareDuration);
+
+    // Deactivate the jumpscare visuals
+    if (jumpscareUI != null)
+    {
+        jumpscareUI.SetActive(false);
+    }
+
+    // Respawn the player after the jumpscare
+    RespawnPlayer();
 }
 
 }
