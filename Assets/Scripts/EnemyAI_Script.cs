@@ -83,21 +83,25 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    IEnumerator JumpscareRoutine() // Only one instance of this method exists now
+    IEnumerator JumpscareRoutine()
     {
         // Disable player movement
         DisablePlayerControls();
+
+        // Play jumpscare sound FIRST before enabling UI
+    if (jumpscareSound != null)
+    {
+        jumpscareSound.Stop();
+        jumpscareSound.PlayOneShot(jumpscareSound.clip);
+    }
+
+        // Small delay before enabling UI (Optional, tweak this value)
+        yield return new WaitForSeconds(0.8f); 
 
         // Show jumpscare UI
         if (jumpscareUI != null)
         {
             jumpscareUI.SetActive(true);
-        }
-
-        // Play jumpscare sound
-        if (jumpscareSound != null)
-        {
-            jumpscareSound.Play();
         }
 
         // Wait for jumpscare duration
