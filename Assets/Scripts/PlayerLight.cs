@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerLight : MonoBehaviour
@@ -11,6 +10,7 @@ public class PlayerLight : MonoBehaviour
     private bool obtained;
     private bool active;
     private int firstLight;
+    private Coroutine flickerCoroutine; // To hold the flicker coroutine reference
 
     void Start()
     {
@@ -19,40 +19,71 @@ public class PlayerLight : MonoBehaviour
         obtained = false;
         firstLight = 0;
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        if (playerInteract.GetLantern() != null && Input.GetKeyDown(KeyCode.X)) { 
-            if(obtained == false)
+        if (playerInteract.GetLantern() != null && Input.GetKeyDown(KeyCode.X))
+        {
+            if (obtained == false)
             {
                 lantern.SetActive(false);
                 obtained = true;
             }
         }
-        
-        if (obtained) {
+
+        if (obtained)
+        {
             lightControl();
         }
-        
     }
 
     void lightControl()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (active == false)
+            active = !active; // Toggle the active state
+            flashLight.SetActive(active);
+            if (active)
             {
-                active = true;
+                if (firstLight == 0)
+                {
+                    firstLight = 1;
+                }
+                // Start the flickering coroutine after activating the light
+                StartCoroutine(FlickerLight());
             }
             else
             {
-                active = false;
+                // Stop flickering when the light is turned off
+                if (flickerCoroutine != null)
+                {
+                    StopCoroutine(flickerCoroutine);
+                    flickerCoroutine = null; // Reset the coroutine reference
+                }
+                flashLight.GetComponent<Light>().enabled = true; // Ensure the light is on when deactivated
             }
-            flashLight.SetActive(active);
-            if (firstLight == 0) {
-                firstLight = 1;
+        }
+    }
+
+    private IEnumerator FlickerLight()
+    {
+        // Wait for 30 seconds before starting to flicker
+        yield return new WaitForSeconds(5f);
+
+        Light lightComponent = flashLight.GetComponent<Light>();
+        float interval = 0.1f; // Flicker interval
+        float timer = 0f;
+
+        while (active) // Continue flickering while the light is active
+        {
+            timer += Time.deltaTime;
+            if (timer > interval)
+            {
+                lightComponent.enabled = !lightComponent.enabled; // Toggle light
+                timer -= interval;
             }
+            yield return null; // Wait for the next frame
         }
     }
 
