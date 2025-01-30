@@ -12,7 +12,6 @@ public class YokaiTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         notebookNotUsable = true;
-        Debug.Log("I am Colliding");
     }
 
     public bool returnNotebookStatus() 

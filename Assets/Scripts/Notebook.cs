@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class book : MonoBehaviour
 {
@@ -49,11 +50,20 @@ public class book : MonoBehaviour
     [SerializeField] GameObject NObject;
 
     [SerializeField] GameObject FirstNote;
+    [SerializeField] GameObject notesText;
     [SerializeField] GameObject SecondNote;
     [SerializeField] GameObject ThirdNote;
     [SerializeField] GameObject FourthNote;
     [SerializeField] GameObject FifthNote;
     [SerializeField] GameObject SixthNote;
+
+    [SerializeField] NonIntCanvas NoteOne;
+    [SerializeField] NonIntCanvas NoteTwo;
+    [SerializeField] NonIntCanvas NoteThree;
+    [SerializeField] NonIntCanvas NoteFour;
+    [SerializeField] NonIntCanvas NoteFive;
+    [SerializeField] NonIntCanvas NoteSix;
+
 
     private void Start()
     {
@@ -303,26 +313,40 @@ public class book : MonoBehaviour
 
         if (index != 4) {
             FirstNote.SetActive(false);
+            notesText.SetActive(false);
+        } else {
+            FirstNote.SetActive(true);
+            notesText.SetActive(true);
         }
 
         if (index != 5) {
             SecondNote.SetActive(false);
+        } else {
+            SecondNote.SetActive(true);
         }
 
         if (index != 6) {
             ThirdNote.SetActive(false);
+        } else {
+            ThirdNote.SetActive(true);
         }
 
         if (index != 7) {
             FourthNote.SetActive(false);
+        } else {
+            FourthNote.SetActive(true);
         }
 
         if (index != 8) {
             FifthNote.SetActive(false);
+        } else {
+            FifthNote.SetActive(true);
         }
 
         if (index != 9) {
             SixthNote.SetActive(false);
+        } else {
+            SixthNote.SetActive(true);
         }
 
     }

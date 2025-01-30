@@ -51,10 +51,20 @@ public class EnemyAI : MonoBehaviour
             }
         }
 
-        if (chasing)
+       if (chasing)
         {
-            walkingSound.enabled = false;
-            runningSound.enabled = true;
+            // Play the first sound if it's not already playing
+            if (!runningSound.isPlaying)
+            {
+                runningSound.Play();
+                runningSound.loop = true; // Set to loop
+            }
+
+            // Stop the second sound if it's playing
+            if (walkingSound.isPlaying)
+            {
+                walkingSound.Stop();
+            }
             dest = player.position;
             ai.destination = dest;
             ai.speed = chaseSpeed;
@@ -62,14 +72,25 @@ public class EnemyAI : MonoBehaviour
             if (distance <= catchDistance)
             {
                 StartCoroutine(JumpscareRoutine()); // Trigger jumpscare before respawning
+                
                 chasing = false;
             }
         }
 
         if (walking)
         {
-            runningSound.enabled = false;
-            walkingSound.enabled = true;
+            // Play the first sound if it's not already playing
+            if (!walkingSound.isPlaying)
+            {
+                walkingSound.Play();
+                walkingSound.loop = true; // Set to loop
+            }
+
+            // Stop the second sound if it's playing
+            if (runningSound.isPlaying)
+            {
+                runningSound.Stop();
+            }
             dest = currentDest.position;
             ai.destination = dest;
             ai.speed = walkSpeed;
@@ -78,6 +99,7 @@ public class EnemyAI : MonoBehaviour
                 ai.speed = 0;
                 StopCoroutine("stayIdle");
                 StartCoroutine("stayIdle");
+                
                 walking = false;
             }
         }
