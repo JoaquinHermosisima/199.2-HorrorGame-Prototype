@@ -26,6 +26,9 @@ TagManager:
   - FloorTrigger
   - Hinnagami
   - SA
+  - Level3Trigger
+  - Level4Trigger
+  - Level6Trigger
   layers:
   - Default
   - TransparentFX
