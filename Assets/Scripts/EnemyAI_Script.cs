@@ -11,19 +11,17 @@ public class EnemyAI : MonoBehaviour
     public bool walking, chasing;
     public Transform player;
     public Transform respawnPoint; // Assign this in the Inspector
-    Transform currentDest;
-    Vector3 dest;
-    int randNum;
+    private Transform currentDest;
+    private Vector3 dest;
+    private int randNum;
     public Vector3 rayCastOffset;
 
     public AudioSource runningSound;
     public AudioSource walkingSound;
 
-
-    public GameObject jumpscareUI; // Assign a jumpscare UI (like an image) in the Inspector
-    public AudioSource jumpscareSound; // Assign a jumpscare sound in the Inspector
-    public float jumpscareDuration = 1.5f; // Duration of the jumpscare
-
+    // Jumpscare variables
+    public GameObject jumpscareUI; // Assign in Inspector
+    public AudioSource jumpscareSound; // Assign in Inspector
 
     void Start()
     {
@@ -33,6 +31,11 @@ public class EnemyAI : MonoBehaviour
         runningSound = GetComponent<AudioSource>();
         runningSound.enabled = false;
         walkingSound.enabled = true;
+
+        if (jumpscareUI != null)
+        {
+            jumpscareUI.SetActive(false); // Hide jumpscare UI initially
+        }
     }
 
     void Update()
@@ -50,6 +53,7 @@ public class EnemyAI : MonoBehaviour
                 chasing = true;
             }
         }
+
         if (chasing)
         {
             walkingSound.enabled = false;
@@ -60,10 +64,11 @@ public class EnemyAI : MonoBehaviour
             float distance = Vector3.Distance(player.position, ai.transform.position);
             if (distance <= catchDistance)
             {
-                RespawnPlayer(); // Respawn player instead of disabling them
+                StartCoroutine(JumpscareRoutine()); // Trigger jumpscare before respawning
                 chasing = false;
             }
         }
+
         if (walking)
         {
             runningSound.enabled = false;
@@ -81,29 +86,80 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-void RespawnPlayer()
-{
-    if (respawnPoint == null)
+    IEnumerator JumpscareRoutine() // Only one instance of this method exists now
     {
-        Debug.LogError("Respawn Point is not assigned!");
-        return;
+        // Disable player movement
+        DisablePlayerControls();
+
+        // Show jumpscare UI
+        if (jumpscareUI != null)
+        {
+            jumpscareUI.SetActive(true);
+        }
+
+        // Play jumpscare sound
+        if (jumpscareSound != null)
+        {
+            jumpscareSound.Play();
+        }
+
+        // Wait for jumpscare duration
+        yield return new WaitForSeconds(jumpscareTime);
+
+        // Hide jumpscare UI
+        if (jumpscareUI != null)
+        {
+            jumpscareUI.SetActive(false);
+        }
+
+        // Enable player movement
+        EnablePlayerControls();
+
+        // Respawn the player
+        RespawnPlayer();
     }
 
-    Rigidbody rb = player.GetComponent<Rigidbody>();
-    if (rb != null)
+    void RespawnPlayer()
     {
-        rb.velocity = Vector3.zero; // Stop movement
-        rb.angularVelocity = Vector3.zero; // Stop rotational movement
-        rb.MovePosition(respawnPoint.position); // Move the player correctly with physics
-    }
-    else
-    {
-        player.position = respawnPoint.position; // Directly set the position
+        if (respawnPoint == null)
+        {
+            Debug.LogError("Respawn Point is not assigned!");
+            return;
+        }
+
+        Rigidbody rb = player.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.MovePosition(respawnPoint.position);
+        }
+        else
+        {
+            player.position = respawnPoint.position;
+        }
+
+        Debug.Log($"Player has respawned at: {respawnPoint.position}");
+        Physics.SyncTransforms();
     }
 
-    Debug.Log($"Player has respawned at: {respawnPoint.position}");
-    Physics.SyncTransforms(); // Ensure physics matches Transform
-}
+    void DisablePlayerControls()
+    {
+        var playerController = player.GetComponent<MonoBehaviour>(); // Generic approach
+        if (playerController != null)
+        {
+            playerController.enabled = false;
+        }
+    }
+
+    void EnablePlayerControls()
+    {
+        var playerController = player.GetComponent<MonoBehaviour>(); // Generic approach
+        if (playerController != null)
+        {
+            playerController.enabled = true;
+        }
+    }
 
 
     IEnumerator stayIdle()
@@ -126,38 +182,10 @@ void RespawnPlayer()
     }
 
     private void OnTriggerEnter(Collider other)
-{
-    if (other.CompareTag("Player")) // Ensure your player has the tag "Player"
     {
-        RespawnPlayer();
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(JumpscareRoutine());
+        }
     }
-}
-
-    IEnumerator JumpscareRoutine()
-{
-    // Activate the jumpscare visuals
-    if (jumpscareUI != null)
-    {
-        jumpscareUI.SetActive(true);
-    }
-
-    // Play the jumpscare sound
-    if (jumpscareSound != null)
-    {
-        jumpscareSound.Play();
-    }
-
-    // Wait for the jumpscare duration
-    yield return new WaitForSeconds(jumpscareDuration);
-
-    // Deactivate the jumpscare visuals
-    if (jumpscareUI != null)
-    {
-        jumpscareUI.SetActive(false);
-    }
-
-    // Respawn the player after the jumpscare
-    RespawnPlayer();
-}
-
 }
