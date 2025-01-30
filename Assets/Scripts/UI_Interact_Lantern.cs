@@ -27,7 +27,7 @@ public class UI_Interact_Lantern : MonoBehaviour
             }
             else
             {
-                displayText = "Lantern Obtained\nPress F to Use";
+                displayText = "Lantern Obtained. Press F to Use";
                 
             }
             textDisplay.SetText(displayText);

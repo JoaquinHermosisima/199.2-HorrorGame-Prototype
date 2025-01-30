@@ -2,26 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Katana : MonoBehaviour
+public class UI_BossKatana : MonoBehaviour
 {
     [SerializeField] private Player_Interact playerInteract;
     [SerializeField] private GameObject containerGameObject;
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        if (playerInteract.GetKatanaTable() != null)
-        {
-            Show();
-        }
-        else
-        {
-            Hide();
-        }
-        /*
         if (playerInteract.GetBossKatana() != null)
         {
             Show();
@@ -29,7 +20,7 @@ public class UI_Katana : MonoBehaviour
         else
         {
             Hide();
-        }*/
+        }
     }
 
     private void Show()
