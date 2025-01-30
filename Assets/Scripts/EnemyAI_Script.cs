@@ -28,9 +28,6 @@ public class EnemyAI : MonoBehaviour
         walking = true;
         randNum = Random.Range(0, destinations.Count);
         currentDest = destinations[randNum];
-        runningSound = GetComponent<AudioSource>();
-        runningSound.enabled = false;
-        walkingSound.enabled = true;
 
         if (jumpscareUI != null)
         {

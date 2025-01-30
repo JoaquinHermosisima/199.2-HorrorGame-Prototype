@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class NonIntCanvas : MonoBehaviour
 {
     //This Class is for objects that you can view to zoom
     public GameObject canvas;
+
     void Start()
     {
         canvas.SetActive(false);

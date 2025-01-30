@@ -7,11 +7,16 @@ public class YokaiTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject yokai;
 
+    public bool notebookNotUsable = false;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            yokai.SetActive(true);
-        }
+        notebookNotUsable = true;
+        Debug.Log("I am Colliding");
+    }
+
+    public bool returnNotebookStatus() 
+    {
+        return notebookNotUsable;
     }
 }

@@ -48,6 +48,13 @@ public class book : MonoBehaviour
     [SerializeField] GameObject NoObject;
     [SerializeField] GameObject NObject;
 
+    [SerializeField] GameObject FirstNote;
+    [SerializeField] GameObject SecondNote;
+    [SerializeField] GameObject ThirdNote;
+    [SerializeField] GameObject FourthNote;
+    [SerializeField] GameObject FifthNote;
+    [SerializeField] GameObject SixthNote;
+
     private void Start()
     {
         InitialState();
@@ -292,6 +299,30 @@ public class book : MonoBehaviour
             for (int i = 21; i<27; i++) {
                 symbols[i].SetActive(false);
             }
+        }
+
+        if (index != 4) {
+            FirstNote.SetActive(false);
+        }
+
+        if (index != 5) {
+            SecondNote.SetActive(false);
+        }
+
+        if (index != 6) {
+            ThirdNote.SetActive(false);
+        }
+
+        if (index != 7) {
+            FourthNote.SetActive(false);
+        }
+
+        if (index != 8) {
+            FifthNote.SetActive(false);
+        }
+
+        if (index != 9) {
+            SixthNote.SetActive(false);
         }
 
     }

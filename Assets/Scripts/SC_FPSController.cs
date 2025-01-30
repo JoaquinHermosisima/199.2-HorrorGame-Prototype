@@ -18,6 +18,7 @@ public class SC_FPSController : MonoBehaviour
     public bool _cursorLocked;
     public AudioSource breathingRegular;
     public AudioSource breathingSprint;
+    public YokaiTrigger notebookDisable;
 
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
@@ -39,6 +40,7 @@ public class SC_FPSController : MonoBehaviour
 
     void Update()
     {
+        bool notebookStatus = notebookDisable.returnNotebookStatus();
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
@@ -112,29 +114,33 @@ public class SC_FPSController : MonoBehaviour
 
         // Notebook Interactions
         // to open the notebook
-        if (isNotebookActive == false)
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
+        Debug.Log(notebookStatus);
+        if (notebookStatus == true) {
+            if (isNotebookActive == false)
             {
-                //Time.timeScale = 0;
-                Hide_ShowMouseCursor();
-                Notebook.SetActive(true);
-                isNotebookActive = true;
-                canMove = false;
-            }
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    //Time.timeScale = 0;
+                    Hide_ShowMouseCursor();
+                    Notebook.SetActive(true);
+                    isNotebookActive = true;
+                    canMove = false;
+                }
             //to close the notebook
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
+            }
+            else
             {
-                //Time.timeScale = 1;
-                Hide_ShowMouseCursor();
-                Notebook.SetActive(false);
-                isNotebookActive = false;
-                canMove = true;
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    //Time.timeScale = 1;
+                    Hide_ShowMouseCursor();
+                    Notebook.SetActive(false);
+                    isNotebookActive = false;
+                    canMove = true;
+                }
             }
         }
+        
 
     }
 
