@@ -115,7 +115,7 @@ public class SC_FPSController : MonoBehaviour
         // Notebook Interactions
         // to open the notebook
         Debug.Log(notebookStatus);
-        if (notebookStatus == true) {
+        if (notebookStatus == false) {
             if (isNotebookActive == false)
             {
                 if (Input.GetKeyDown(KeyCode.Q))
