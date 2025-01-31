@@ -38,8 +38,6 @@ public class BossCabPuzzle : MonoBehaviour
             blockSound.Play();
             soundPlayed = true; // Set the flag to true to prevent replaying
 
-        } else { 
-            character.SetActive(false); 
         }
 
     }

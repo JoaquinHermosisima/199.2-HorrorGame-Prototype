@@ -35,9 +35,5 @@ public class BossFamPuzzle : MonoBehaviour
             blockSound.Play();
             soundPlayed = true;
         }
-        else
-        {
-            character.SetActive(false);
-        }
     }
 }

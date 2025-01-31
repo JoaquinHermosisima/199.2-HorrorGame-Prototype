@@ -62070,7 +62070,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 41390e3c91d8cb0458ae961f9b99e900, type: 2}
+  - {fileID: 2100000, guid: a7892343535c59f469295992d3519dad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112658,8 +112658,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kuchisakeLevel3: {fileID: 510840320}
   kuchisakeLevel4: {fileID: 1671632826}
-  kuchisakeLevel6_1: {fileID: 0}
-  kuchisakeLevel6_2: {fileID: 0}
+  kuchisakeLevel6_1: {fileID: 1681047672}
+  kuchisakeLevel6_2: {fileID: 1766614494}
 --- !u!114 &1401792238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160050,7 +160050,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 41390e3c91d8cb0458ae961f9b99e900, type: 2}
+  - {fileID: 2100000, guid: a7892343535c59f469295992d3519dad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
