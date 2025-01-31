@@ -17,7 +17,7 @@ public class UI_Lvl4Door : MonoBehaviour
     {
         if (playerInteract.GetLVL4Door() != null)
         {
-            if (fpsController.getCharCount() < 2)
+            if (fpsController.getCharCount() < 16)
             {
                 Show();
             }

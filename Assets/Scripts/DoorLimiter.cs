@@ -16,7 +16,7 @@ public class DoorLimiter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fpsController.getCharCount() >= 2 && lev.getTeaServe() == true)
+        if (fpsController.getCharCount() >= 16 && lev.getTeaServe() == true)
         {
             Door.SetActive(false);
         } else
