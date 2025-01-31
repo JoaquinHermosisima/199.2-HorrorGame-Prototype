@@ -69,7 +69,7 @@ public class PlayerLight : MonoBehaviour
     private IEnumerator FlickerLight()
     {
         // Wait for 30 seconds before starting to flicker
-        yield return new WaitForSeconds(60f);
+        yield return new WaitForSeconds(120f);
 
         Light lightComponent = flashLight.GetComponent<Light>();
         float interval = 0.5f; // Flicker interval
