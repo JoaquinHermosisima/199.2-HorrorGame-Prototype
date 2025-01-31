@@ -7,9 +7,12 @@ public class BossFamPuzzle : MonoBehaviour
     [SerializeField] private BossVertiLock[] locks;
     public GameObject character;
     private bool allMatch;
+    [SerializeField] private AudioSource blockSound;
+    private bool soundPlayed;
     void Start()
     {
         allMatch = false;
+        soundPlayed = false;
         character.SetActive(false);
     }
 
@@ -26,10 +29,11 @@ public class BossFamPuzzle : MonoBehaviour
             }
         }
 
-        if (allMatch)
+        if (allMatch && !soundPlayed)
         {
             character.SetActive(true);
-
+            blockSound.Play();
+            soundPlayed = true;
         }
         else
         {
