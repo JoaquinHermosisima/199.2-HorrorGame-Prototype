@@ -9,11 +9,13 @@ public class LevelDoorNonPUZ : MonoBehaviour
     private bool allMatch;
     private bool doorOpened;
     private bool soundPlayed;
+    public bool teaServed;
     [SerializeField] private AudioSource doorOpenSound;
     // Start is called before the first frame update
     void Start()
     {
         allMatch = false;
+        teaServed = false;
         doorOpened = false; // Initialize the doorOpened flag to false
         soundPlayed = false; // Initialize the soundPlayed flag to false
     }
@@ -52,7 +54,12 @@ public class LevelDoorNonPUZ : MonoBehaviour
         
         if (allMatch)
         {
-            Door.SetActive(false);
+            teaServed = true;
         }
+    }
+
+    public bool getTeaServe()
+    {
+        return teaServed;
     }
 }

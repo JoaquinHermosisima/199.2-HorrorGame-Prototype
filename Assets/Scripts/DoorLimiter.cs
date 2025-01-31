@@ -6,9 +6,8 @@ using UnityEngine;
 public class DoorLimiter : MonoBehaviour
 {
     public SC_FPSController fpsController;
-    [SerializeField] private TMP_Text textDisplay;
     public GameObject Door;
-    public int charNeeded;
+    public LevelDoorNonPUZ lev;
     void Start()
     { 
         
@@ -17,14 +16,12 @@ public class DoorLimiter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fpsController.getCharCount() >= charNeeded)
-        {
-            Door.SetActive(true);
-            textDisplay.SetText(" ");
-        } else
+        if (fpsController.getCharCount() >= 2 && lev.getTeaServe() == true)
         {
             Door.SetActive(false);
-            textDisplay.SetText("You are lacking characters");
+        } else
+        {
+            Door.SetActive(true);
         }
     }
 }

@@ -5,25 +5,22 @@ using UnityEngine;
 
 public class UI_Lvl4Door : MonoBehaviour
 {
-    //This Class is for the PressX UI of the Door
-    [SerializeField] private GameObject containerGameObject;
     [SerializeField] private Player_Interact playerInteract;
     [SerializeField] private SC_FPSController fpsController;
-    [SerializeField] private TMP_Text textDisplay;
-
-    private void Update()
+    [SerializeField] private GameObject containerGameObject;
+    void Start()
     {
-        if (playerInteract.getChar_Interactible() != null)
+
+    }
+
+    void Update()
+    {
+        if (playerInteract.GetLVL4Door() != null)
         {
-            if (fpsController.getCharCount() < playerInteract.getChar_Interactible().getRequiredChar())
+            if (fpsController.getCharCount() < 2)
             {
-                textDisplay.SetText("You need to Collect all characters in the room");
+                Show();
             }
-            else
-            {
-                textDisplay.SetText("Press X");
-            }
-            Show();
         }
         else
         {
@@ -31,6 +28,7 @@ public class UI_Lvl4Door : MonoBehaviour
         }
 
     }
+
     private void Show()
     {
         containerGameObject.SetActive(true);

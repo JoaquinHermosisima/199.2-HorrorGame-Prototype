@@ -29,6 +29,7 @@ TagManager:
   - Level3Trigger
   - Level4Trigger
   - Level6Trigger
+  - LVL4Door
   layers:
   - Default
   - TransparentFX

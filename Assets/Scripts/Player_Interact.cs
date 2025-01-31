@@ -186,6 +186,21 @@ public class Player_Interact : MonoBehaviour
         return null; // Return null if no objects with the specified tag are found
     }
 
+    public GameObject GetLVL4Door()
+    {
+        float interactRange = 2f;
+        Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+        foreach (Collider collider in colliderArray)
+        {
+            // Check if the collider's GameObject has the specified tag
+            if (collider.CompareTag("LVL4Door"))
+            {
+                return collider.gameObject;
+            }
+        }
+        return null; // Return null if no objects with the specified tag are found
+    }
+
     public Hinnagami GetHinnagami()
     {
         float interactRange = 1.0f;
