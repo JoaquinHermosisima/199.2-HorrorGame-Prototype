@@ -7,13 +7,15 @@ public class KuchisakeSounds : MonoBehaviour
     // Start is called before the first frame update
     public GameObject kuchisakeLevel3;
     public GameObject kuchisakeLevel4;
-    public GameObject kuchisakeLevel6;
+    public GameObject kuchisakeLevel6_1;
+    public GameObject kuchisakeLevel6_2;
 
     void Start()
     {
         kuchisakeLevel3.SetActive(false);
         kuchisakeLevel4.SetActive(false);
-        kuchisakeLevel6.SetActive(false);
+        kuchisakeLevel6_1.SetActive(false);
+        kuchisakeLevel6_2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,19 +25,22 @@ public class KuchisakeSounds : MonoBehaviour
         {
             kuchisakeLevel3.SetActive(true);
             kuchisakeLevel4.SetActive(false);
-            kuchisakeLevel6.SetActive(false);
+            kuchisakeLevel6_1.SetActive(false);
+            kuchisakeLevel6_2.SetActive(false);
         }
         if (collision.gameObject.CompareTag("Level4Trigger"))
         {
             kuchisakeLevel3.SetActive(false);
             kuchisakeLevel4.SetActive(true);
-            kuchisakeLevel6.SetActive(false);
+            kuchisakeLevel6_1.SetActive(false);
+            kuchisakeLevel6_2.SetActive(false);
         }
         if (collision.gameObject.CompareTag("Level6Trigger"))
         {
             kuchisakeLevel3.SetActive(false);
             kuchisakeLevel4.SetActive(false);
-            kuchisakeLevel6.SetActive(true);
+            kuchisakeLevel6_1.SetActive(true);
+            kuchisakeLevel6_2.SetActive(true);
         }
     }
 }
