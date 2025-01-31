@@ -15,6 +15,7 @@ public class SC_FPSController : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
     public GameObject Notebook;
+    public book NotebookSheet;
     public bool _cursorLocked;
     public AudioSource breathingRegular;
     public AudioSource breathingSprint;
@@ -130,14 +131,18 @@ public class SC_FPSController : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.Q))
+                if (NotebookSheet.rotateValue() == false) 
                 {
-                    //Time.timeScale = 1;
-                    Hide_ShowMouseCursor();
-                    Notebook.SetActive(false);
-                    isNotebookActive = false;
-                    canMove = true;
+                    if (Input.GetKeyDown(KeyCode.Q))
+                    {
+                        //Time.timeScale = 1;
+                        Hide_ShowMouseCursor();
+                        Notebook.SetActive(false);
+                        isNotebookActive = false;
+                        canMove = true;
+                    }
                 }
+                
             }
         }
         

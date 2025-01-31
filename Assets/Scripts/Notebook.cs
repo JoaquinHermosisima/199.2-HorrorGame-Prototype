@@ -170,6 +170,11 @@ public class book : MonoBehaviour
         }
     }
 
+    public bool rotateValue() 
+    {
+        return rotate;
+    }
+
     void Update()
     {
         if (AObject.activeSelf == false)
