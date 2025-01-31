@@ -8,7 +8,7 @@ public class NewBehaviourScript : MonoBehaviour
     //Load Game
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("SampleScene");
     }
 
     // Quit Game

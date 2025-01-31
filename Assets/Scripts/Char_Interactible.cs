@@ -6,10 +6,9 @@ using UnityEngine.UI;
 using TMPro;
 using System.Timers;
 using UnityEditor.Animations;
-
 public class Char_Interactible : MonoBehaviour
 {
-    //This class contains the code for the Flashcard Canvas
+    // This class contains the code for the Flashcard Canvas
     public SC_FPSController fpsController;
     public GameObject charCanvas_1;
     public GameObject charCanvas_2;
@@ -18,9 +17,6 @@ public class Char_Interactible : MonoBehaviour
     public TMP_InputField inputField_2;
     public TMP_Text textDisplay_1;
     public TMP_Text textDisplay_2;
-    public Button submitButton_1;
-    public Button submitButton_2;
-    //public string input;
     public string correctChar_1;
     public string correctChar_2;
     public string answer_1;
@@ -41,7 +37,18 @@ public class Char_Interactible : MonoBehaviour
         {
             door.SetActive(false);
         }
+
+        // Check for Enter key press to submit the input
+        if (charCanvas_1.activeSelf && Input.GetKeyDown(KeyCode.Return))
+        {
+            evalInput0();
+        }
+        else if (charCanvas_2.activeSelf && Input.GetKeyDown(KeyCode.Return))
+        {
+            evalInput1();
+        }
     }
+
     public void Interact()
     {
         System.Random rnd = new System.Random();
@@ -51,16 +58,15 @@ public class Char_Interactible : MonoBehaviour
             charCanvas_1.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             inputField_1.Select();
-            submitButton_1.onClick.AddListener(evalInput0);
         }
-        else if (num == 1) {
+        else if (num == 1)
+        {
             charCanvas_2.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             inputField_2.Select();
-            submitButton_2.onClick.AddListener(evalInput1);
         }
-        
     }
+
     public void dontInteract()
     {
         charCanvas_1.SetActive(false);
@@ -70,8 +76,7 @@ public class Char_Interactible : MonoBehaviour
 
     public void evalInput0()
     {
-        answer_1 = inputField_1.text;
-        answer_1 = answer_1.ToUpper();
+        answer_1 = inputField_1.text.ToUpper();
         if (answer_1 == correctChar_1)
         {
             textDisplay_1.SetText("Correct");
@@ -85,8 +90,7 @@ public class Char_Interactible : MonoBehaviour
 
     public void evalInput1()
     {
-        answer_2 = inputField_2.text;
-        answer_2 = answer_2.ToUpper();
+        answer_2 = inputField_2.text.ToUpper();
         if (answer_2 == correctChar_2)
         {
             textDisplay_2.SetText("Correct");
@@ -108,9 +112,9 @@ public class Char_Interactible : MonoBehaviour
         yield return new WaitForSeconds(1);
         fpsController.bringMovement();
         charCanvas_1.SetActive(false);
-        textDisplay_1.SetText("what character is this");
+        textDisplay_1.SetText("What character is this?");
         inputField_1.text = "";
-        if(answer_1 == correctChar_1)
+        if (answer_1 == correctChar_1)
         {
             isAnswered = true;
         }
@@ -121,7 +125,7 @@ public class Char_Interactible : MonoBehaviour
         yield return new WaitForSeconds(1);
         fpsController.bringMovement();
         charCanvas_2.SetActive(false);
-        textDisplay_2.SetText("what character is this");
+        textDisplay_2.SetText("What character is this?");
         inputField_2.text = "";
         if (answer_2 == correctChar_2)
         {
@@ -133,10 +137,4 @@ public class Char_Interactible : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
     }
-
-    /*public bool getStatus()
-    {
-        return isAnswered;
-    }*/
-
 }

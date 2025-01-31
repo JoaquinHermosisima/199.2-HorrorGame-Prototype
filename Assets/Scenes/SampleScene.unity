@@ -2867,7 +2867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &32149389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30065,7 +30065,6 @@ GameObject:
   - component: {fileID: 417816924}
   - component: {fileID: 417816923}
   - component: {fileID: 417816922}
-  - component: {fileID: 417816926}
   m_Layer: 0
   m_Name: LVL4_TRAPDOOR
   m_TagString: Untagged
@@ -30159,29 +30158,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -1.352, z: 0}
---- !u!114 &417816926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 417816921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platforms:
-  - {fileID: 752374814}
-  - {fileID: 1419577624}
-  - {fileID: 2039207753}
-  - {fileID: 1677430744}
-  - {fileID: 1877586232}
-  - {fileID: 480684934}
-  - {fileID: 1308563252}
-  - {fileID: 979671116}
-  door: {fileID: 417816921}
-  doorOpenSound: {fileID: 988368920}
 --- !u!1001 &419275202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36791,7 +36767,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Submit
+  m_text: Press Enter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -57694,7 +57670,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Submit
+  m_text: Press Enter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -93382,8 +93358,6 @@ MonoBehaviour:
   inputField_2: {fileID: 273492071}
   textDisplay_1: {fileID: 114749486}
   textDisplay_2: {fileID: 1573464629}
-  submitButton_1: {fileID: 1044778172}
-  submitButton_2: {fileID: 949702257}
   correctChar_1: A
   correctChar_2: O
   answer_1: 
@@ -106548,8 +106522,6 @@ MonoBehaviour:
   inputField_2: {fileID: 1471354544}
   textDisplay_1: {fileID: 208996039}
   textDisplay_2: {fileID: 861918076}
-  submitButton_1: {fileID: 170867038}
-  submitButton_2: {fileID: 139948678}
   correctChar_1: NANI
   correctChar_2: TANEN
   answer_1: 
@@ -109253,6 +109225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1366140083}
+  - component: {fileID: 1366140084}
   m_Layer: 0
   m_Name: destination (8)
   m_TagString: Untagged
@@ -109275,6 +109248,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 912310608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1366140084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366140082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535f649df69d556488b28de0cc9a4b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1366280230
 GameObject:
   m_ObjectHideFlags: 0
@@ -112290,7 +112275,7 @@ Transform:
   m_GameObject: {fileID: 1401792217}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.04563692, z: -0, w: 0.9989581}
-  m_LocalPosition: {x: 569.4, y: 122.3, z: 55.2}
+  m_LocalPosition: {x: 544.97, y: 204.15, z: 0.977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -112851,11 +112836,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'I said don''t look back
-
-    NOT LOSE YOUR NOTEBOOK!!!
-
-'
+  m_text: "Why am I hearing \nmultiple footsteps?\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -132381,6 +132362,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 302}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1627328973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5296401307832355938, guid: d6f63ad3208cd914e9aa0a9b98f8f005, type: 3}
+  m_PrefabInstance: {fileID: 1977650717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1627328978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627328973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5041fa88a7e028449f6d34c16b8c893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platforms:
+  - {fileID: 752374814}
+  - {fileID: 1419577624}
+  - {fileID: 2039207753}
+  - {fileID: 1677430744}
+  - {fileID: 1877586232}
+  - {fileID: 480684934}
+  - {fileID: 1308563252}
+  - {fileID: 979671116}
+  door: {fileID: 417816921}
+  doorOpenSound: {fileID: 988368920}
 --- !u!1 &1629516002
 GameObject:
   m_ObjectHideFlags: 0
@@ -139373,8 +139382,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.004272461, y: -265}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 5.7106, y: -249.5601}
+  m_SizeDelta: {x: 1121.4504, y: 80.8798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1711135606
 MonoBehaviour:
@@ -139431,7 +139440,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -149551,7 +149560,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Submit
+  m_text: Press Enter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -155479,7 +155488,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Submit
+  m_text: Press Enter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -163344,7 +163353,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5296401307832355938, guid: d6f63ad3208cd914e9aa0a9b98f8f005, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1627328978}
   m_SourcePrefab: {fileID: 100100000, guid: d6f63ad3208cd914e9aa0a9b98f8f005, type: 3}
 --- !u!1 &1978868830 stripped
 GameObject:
