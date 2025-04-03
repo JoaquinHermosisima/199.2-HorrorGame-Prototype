@@ -6,6 +6,7 @@ public class KatanaPuzzle : MonoBehaviour
 {
     public GameObject RoChar;
     public GameObject TeaPuzzle;
+    public GameObject Kuchisake;
     [SerializeField] private AudioSource roSound;
     [SerializeField] private Katana[] katanas;
     private bool allMatch;
@@ -42,6 +43,7 @@ public class KatanaPuzzle : MonoBehaviour
         {
             RoChar.SetActive(true);
             TeaPuzzle.SetActive(true);
+            Kuchisake.SetActive(true);
             roSound.Play();
             soundPlayed = true; // Set the flag to true to prevent replaying
         }
